@@ -1,0 +1,974 @@
+{
+  "selection_rule": "first existing dam-site feature, before looking at phase/coherence",
+  "site_source": "$DATA_ROOT/deliverables/tay_full_grid/dam_sites.geojson",
+  "site": {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        114.68309869375906,
+        -2.683670460424211
+      ]
+    },
+    "properties": {
+      "site_id": "D-01",
+      "risk": 0.997,
+      "lat": -2.683670460424211,
+      "lon": 114.68309869375906
+    }
+  },
+  "interpretation": "Local operator diagnostic only. No Tay fitting or deformation validation. Both operators follow GSLC geocoding, not mission radar-coordinate multilooking. The small crop cannot satisfy the production million-pixel support gate.",
+  "pairs": [
+    {
+      "pair": [
+        "20260622",
+        "20260704"
+      ],
+      "bbox_wgs84": [
+        114.6739364434803,
+        -2.692615203081613,
+        114.69194878822319,
+        -2.674501616725995
+      ],
+      "mission_window": [
+        2584,
+        1409,
+        100,
+        100
+      ],
+      "mission_bounds": [
+        241380.0,
+        9702140.0,
+        243380.0,
+        9704140.0
+      ],
+      "input_inventory_not_content_hashes": [
+        {
+          "path": "$DATA_ROOT/grid_products/_deletable_work/nisar/gslc_subset/NISAR_L2_PR_GSLC_023_125_A_176_4005_DHDH_A_20260622T220711_20260622T220745_P05023_N_F_J_001_peatguard_aoi.h5",
+          "size_bytes": 875887220,
+          "mtime_ns": 1784833743738698625
+        },
+        {
+          "path": "$DATA_ROOT/grid_products/_deletable_work/nisar/gslc_subset/NISAR_L2_PR_GSLC_024_125_A_176_4005_DHDH_A_20260704T220710_20260704T220745_P05023_N_F_J_001_peatguard_aoi.h5",
+          "size_bytes": 875532855,
+          "mtime_ns": 1784833559432203112
+        },
+        {
+          "path": "$DATA_ROOT/grid_products/_deletable_work/nisar/gunw_products/nisar_gunw_20260622_20260704_wrapped_phase_20m.tif",
+          "size_bytes": 48497724,
+          "mtime_ns": 1788182662777338786
+        },
+        {
+          "path": "$DATA_ROOT/grid_products/_deletable_work/nisar/gunw_products/nisar_gunw_20260622_20260704_coherence_20m.tif",
+          "size_bytes": 47333882,
+          "mtime_ns": 1788182664561857945
+        }
+      ],
+      "individually_gated": [
+        {
+          "mode": "unit_phasor",
+          "minimum_strength": 0.0,
+          "phase": {
+            "selected_convention": "same_sign",
+            "selected_fine_phase_multiplier": 1,
+            "candidates": {
+              "same_sign": {
+                "fine_phase_multiplier": 1,
+                "constant_circular_offset_rad": -0.6776531755455457,
+                "valid_pixels": 8282,
+                "circular_mae_rad": 0.4681999926377666,
+                "circular_rmse_rad": 0.68561871261363,
+                "circular_p95_abs_rad_sample": 1.3872996955641232,
+                "resultant_length": 0.8168290679676342,
+                "sample_pixels": 5000
+              },
+              "opposite_sign": {
+                "fine_phase_multiplier": -1,
+                "constant_circular_offset_rad": -0.29176579904600153,
+                "valid_pixels": 8282,
+                "circular_mae_rad": 0.8432837312238791,
+                "circular_rmse_rad": 1.110611452400138,
+                "circular_p95_abs_rad_sample": 2.498256056826912,
+                "resultant_length": 0.5621478382969342,
+                "sample_pixels": 5000
+              }
+            }
+          },
+          "coherence": {
+            "valid_pixels": 10000,
+            "fine_mean": 0.44845577345490456,
+            "mission_mean": 0.454322345244512,
+            "bias_fine_minus_mission": -0.005866571789607406,
+            "mae": 0.05985170753337443,
+            "rmse": 0.07687149838793848,
+            "pearson": 0.8901941064214878,
+            "spearman_sample": 0.8912654500613989,
+            "spearman_sample_pixels": 5000,
+            "mean_circular_aggregation_strength": 0.39553370094383133,
+            "threshold_coverage": {
+              "0.25": {
+                "fine_fraction": 0.8689,
+                "mission_fraction": 0.8903,
+                "both_fraction": 0.8282
+              },
+              "0.35": {
+                "fine_fraction": 0.688,
+                "mission_fraction": 0.7153,
+                "both_fraction": 0.6341
+              },
+              "0.5": {
+                "fine_fraction": 0.3823,
+                "mission_fraction": 0.3857,
+                "both_fraction": 0.3217
+              },
+              "0.7": {
+                "fine_fraction": 0.0739,
+                "mission_fraction": 0.0745,
+                "both_fraction": 0.0529
+              }
+            }
+          },
+          "release_gates": {
+            "supporting_coherence": {
+              "passed": false,
+              "checks": {
+                "at_least_1000000_valid_pixels": false,
+                "absolute_bias_at_most_0.03": true,
+                "mae_at_most_0.10": true,
+                "pearson_at_least_0.85": true
+              },
+              "interpretation": "Passing permits a quality/observability layer only."
+            },
+            "displacement_phase": {
+              "passed": false,
+              "checks": {
+                "expected_same_sign_selected": true,
+                "at_least_1000000_valid_pixels": false,
+                "circular_mae_at_most_0.10_rad": false,
+                "circular_rmse_at_most_0.15_rad": false,
+                "resultant_length_at_least_0.98": false
+              },
+              "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+            }
+          }
+        },
+        {
+          "mode": "complex_weighted",
+          "minimum_strength": 0.0,
+          "phase": {
+            "selected_convention": "same_sign",
+            "selected_fine_phase_multiplier": 1,
+            "candidates": {
+              "same_sign": {
+                "fine_phase_multiplier": 1,
+                "constant_circular_offset_rad": -0.675932093547829,
+                "valid_pixels": 8282,
+                "circular_mae_rad": 0.36414196737954696,
+                "circular_rmse_rad": 0.5455512125838848,
+                "circular_p95_abs_rad_sample": 1.1026897093525014,
+                "resultant_length": 0.8780569424493987,
+                "sample_pixels": 5000
+              },
+              "opposite_sign": {
+                "fine_phase_multiplier": -1,
+                "constant_circular_offset_rad": -0.2904299184348354,
+                "valid_pixels": 8282,
+                "circular_mae_rad": 0.788603867112682,
+                "circular_rmse_rad": 1.0529549951532748,
+                "circular_p95_abs_rad_sample": 2.4506680623028516,
+                "resultant_length": 0.6023994265245709,
+                "sample_pixels": 5000
+              }
+            }
+          },
+          "coherence": {
+            "valid_pixels": 10000,
+            "fine_mean": 0.44845577345490456,
+            "mission_mean": 0.454322345244512,
+            "bias_fine_minus_mission": -0.005866571789607406,
+            "mae": 0.05985170753337443,
+            "rmse": 0.07687149838793848,
+            "pearson": 0.8901941064214878,
+            "spearman_sample": 0.8912654500613989,
+            "spearman_sample_pixels": 5000,
+            "mean_circular_aggregation_strength": 0.5525759936667047,
+            "threshold_coverage": {
+              "0.25": {
+                "fine_fraction": 0.8689,
+                "mission_fraction": 0.8903,
+                "both_fraction": 0.8282
+              },
+              "0.35": {
+                "fine_fraction": 0.688,
+                "mission_fraction": 0.7153,
+                "both_fraction": 0.6341
+              },
+              "0.5": {
+                "fine_fraction": 0.3823,
+                "mission_fraction": 0.3857,
+                "both_fraction": 0.3217
+              },
+              "0.7": {
+                "fine_fraction": 0.0739,
+                "mission_fraction": 0.0745,
+                "both_fraction": 0.0529
+              }
+            }
+          },
+          "release_gates": {
+            "supporting_coherence": {
+              "passed": false,
+              "checks": {
+                "at_least_1000000_valid_pixels": false,
+                "absolute_bias_at_most_0.03": true,
+                "mae_at_most_0.10": true,
+                "pearson_at_least_0.85": true
+              },
+              "interpretation": "Passing permits a quality/observability layer only."
+            },
+            "displacement_phase": {
+              "passed": false,
+              "checks": {
+                "expected_same_sign_selected": true,
+                "at_least_1000000_valid_pixels": false,
+                "circular_mae_at_most_0.10_rad": false,
+                "circular_rmse_at_most_0.15_rad": false,
+                "resultant_length_at_least_0.98": false
+              },
+              "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+            }
+          }
+        },
+        {
+          "mode": "unit_phasor",
+          "minimum_strength": 0.25,
+          "phase": {
+            "selected_convention": "same_sign",
+            "selected_fine_phase_multiplier": 1,
+            "candidates": {
+              "same_sign": {
+                "fine_phase_multiplier": 1,
+                "constant_circular_offset_rad": -0.6798683115037604,
+                "valid_pixels": 6838,
+                "circular_mae_rad": 0.3802477341131895,
+                "circular_rmse_rad": 0.5354881445219051,
+                "circular_p95_abs_rad_sample": 1.0689435594471621,
+                "resultant_length": 0.8771295772014671,
+                "sample_pixels": 5000
+              },
+              "opposite_sign": {
+                "fine_phase_multiplier": -1,
+                "constant_circular_offset_rad": -0.28361700132698114,
+                "valid_pixels": 6838,
+                "circular_mae_rad": 0.7694605183764002,
+                "circular_rmse_rad": 1.0219633848343899,
+                "circular_p95_abs_rad_sample": 2.3153076336812055,
+                "resultant_length": 0.6178559308274236,
+                "sample_pixels": 5000
+              }
+            }
+          },
+          "coherence": {
+            "valid_pixels": 10000,
+            "fine_mean": 0.44845577345490456,
+            "mission_mean": 0.454322345244512,
+            "bias_fine_minus_mission": -0.005866571789607406,
+            "mae": 0.05985170753337443,
+            "rmse": 0.07687149838793848,
+            "pearson": 0.8901941064214878,
+            "spearman_sample": 0.8912654500613989,
+            "spearman_sample_pixels": 5000,
+            "mean_circular_aggregation_strength": 0.39553370094383133,
+            "threshold_coverage": {
+              "0.25": {
+                "fine_fraction": 0.8689,
+                "mission_fraction": 0.8903,
+                "both_fraction": 0.8282
+              },
+              "0.35": {
+                "fine_fraction": 0.688,
+                "mission_fraction": 0.7153,
+                "both_fraction": 0.6341
+              },
+              "0.5": {
+                "fine_fraction": 0.3823,
+                "mission_fraction": 0.3857,
+                "both_fraction": 0.3217
+              },
+              "0.7": {
+                "fine_fraction": 0.0739,
+                "mission_fraction": 0.0745,
+                "both_fraction": 0.0529
+              }
+            }
+          },
+          "release_gates": {
+            "supporting_coherence": {
+              "passed": false,
+              "checks": {
+                "at_least_1000000_valid_pixels": false,
+                "absolute_bias_at_most_0.03": true,
+                "mae_at_most_0.10": true,
+                "pearson_at_least_0.85": true
+              },
+              "interpretation": "Passing permits a quality/observability layer only."
+            },
+            "displacement_phase": {
+              "passed": false,
+              "checks": {
+                "expected_same_sign_selected": true,
+                "at_least_1000000_valid_pixels": false,
+                "circular_mae_at_most_0.10_rad": false,
+                "circular_rmse_at_most_0.15_rad": false,
+                "resultant_length_at_least_0.98": false
+              },
+              "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+            }
+          }
+        },
+        {
+          "mode": "complex_weighted",
+          "minimum_strength": 0.25,
+          "phase": {
+            "selected_convention": "same_sign",
+            "selected_fine_phase_multiplier": 1,
+            "candidates": {
+              "same_sign": {
+                "fine_phase_multiplier": 1,
+                "constant_circular_offset_rad": -0.6783410202074528,
+                "valid_pixels": 7886,
+                "circular_mae_rad": 0.33828063463500047,
+                "circular_rmse_rad": 0.4933975145464468,
+                "circular_p95_abs_rad_sample": 0.9816145888514956,
+                "resultant_length": 0.8956476679093206,
+                "sample_pixels": 5000
+              },
+              "opposite_sign": {
+                "fine_phase_multiplier": -1,
+                "constant_circular_offset_rad": -0.28235773828687266,
+                "valid_pixels": 7886,
+                "circular_mae_rad": 0.7692066388900162,
+                "circular_rmse_rad": 1.0302880872750564,
+                "circular_p95_abs_rad_sample": 2.404571321684638,
+                "resultant_length": 0.6167850311833664,
+                "sample_pixels": 5000
+              }
+            }
+          },
+          "coherence": {
+            "valid_pixels": 10000,
+            "fine_mean": 0.44845577345490456,
+            "mission_mean": 0.454322345244512,
+            "bias_fine_minus_mission": -0.005866571789607406,
+            "mae": 0.05985170753337443,
+            "rmse": 0.07687149838793848,
+            "pearson": 0.8901941064214878,
+            "spearman_sample": 0.8912654500613989,
+            "spearman_sample_pixels": 5000,
+            "mean_circular_aggregation_strength": 0.5525759936667047,
+            "threshold_coverage": {
+              "0.25": {
+                "fine_fraction": 0.8689,
+                "mission_fraction": 0.8903,
+                "both_fraction": 0.8282
+              },
+              "0.35": {
+                "fine_fraction": 0.688,
+                "mission_fraction": 0.7153,
+                "both_fraction": 0.6341
+              },
+              "0.5": {
+                "fine_fraction": 0.3823,
+                "mission_fraction": 0.3857,
+                "both_fraction": 0.3217
+              },
+              "0.7": {
+                "fine_fraction": 0.0739,
+                "mission_fraction": 0.0745,
+                "both_fraction": 0.0529
+              }
+            }
+          },
+          "release_gates": {
+            "supporting_coherence": {
+              "passed": false,
+              "checks": {
+                "at_least_1000000_valid_pixels": false,
+                "absolute_bias_at_most_0.03": true,
+                "mae_at_most_0.10": true,
+                "pearson_at_least_0.85": true
+              },
+              "interpretation": "Passing permits a quality/observability layer only."
+            },
+            "displacement_phase": {
+              "passed": false,
+              "checks": {
+                "expected_same_sign_selected": true,
+                "at_least_1000000_valid_pixels": false,
+                "circular_mae_at_most_0.10_rad": false,
+                "circular_rmse_at_most_0.15_rad": false,
+                "resultant_length_at_least_0.98": false
+              },
+              "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+            }
+          }
+        }
+      ],
+      "identical_pixel_support": [
+        {
+          "minimum_coherence": 0.25,
+          "minimum_strength_in_both_modes": 0.0,
+          "common_pixels": 8282,
+          "modes": {
+            "unit_phasor": {
+              "same_sign": {
+                "circular_offset_rad": -0.6776531755455457,
+                "circular_mae_rad": 0.4681999926377666,
+                "circular_rmse_rad": 0.68561871261363,
+                "resultant_length": 0.8168290679676342
+              },
+              "opposite_sign": {
+                "circular_offset_rad": -0.29176579904600153,
+                "circular_mae_rad": 0.8432837312238791,
+                "circular_rmse_rad": 1.110611452400138,
+                "resultant_length": 0.5621478382969342
+              }
+            },
+            "complex_weighted": {
+              "same_sign": {
+                "circular_offset_rad": -0.675932093547829,
+                "circular_mae_rad": 0.36414196737954696,
+                "circular_rmse_rad": 0.5455512125838847,
+                "resultant_length": 0.8780569424493987
+              },
+              "opposite_sign": {
+                "circular_offset_rad": -0.2904299184348354,
+                "circular_mae_rad": 0.788603867112682,
+                "circular_rmse_rad": 1.0529549951532748,
+                "resultant_length": 0.6023994265245709
+              }
+            }
+          }
+        },
+        {
+          "minimum_coherence": 0.25,
+          "minimum_strength_in_both_modes": 0.25,
+          "common_pixels": 6757,
+          "modes": {
+            "unit_phasor": {
+              "same_sign": {
+                "circular_offset_rad": -0.6795827499692411,
+                "circular_mae_rad": 0.3738011578504722,
+                "circular_rmse_rad": 0.5220608091300114,
+                "resultant_length": 0.8815821360350007
+              },
+              "opposite_sign": {
+                "circular_offset_rad": -0.2825280556874182,
+                "circular_mae_rad": 0.7659936557927645,
+                "circular_rmse_rad": 1.0177286680745108,
+                "resultant_length": 0.6203620321046923
+              }
+            },
+            "complex_weighted": {
+              "same_sign": {
+                "circular_offset_rad": -0.6794519228410348,
+                "circular_mae_rad": 0.3054297802481599,
+                "circular_rmse_rad": 0.44193913739280494,
+                "resultant_length": 0.9143013569865005
+              },
+              "opposite_sign": {
+                "circular_offset_rad": -0.28105531071532164,
+                "circular_mae_rad": 0.7335002329531265,
+                "circular_rmse_rad": 0.9864756025063496,
+                "resultant_length": 0.6436126628115113
+              }
+            }
+          }
+        }
+      ],
+      "output_raster_hashes": {
+        "nisar_gslc_20260622_20260704_wrapped_phase_5m.tif": "b734a32f29f480157970fd5ef25f2c6b9e1ccda6fd27b9c7f5fe47255166a7ed",
+        "nisar_gslc_20260622_20260704_complex_cross_product_5m.tif": "727ef2c730a49d2b91dcc32db545090222cdd874eb77b9b21415fbf25ffaf585",
+        "mission_phase_20m.tif": "c9a2b2d97e7f16e625b4122e2a47029a06d0e971ef26242593b0bdaac2416554",
+        "mission_coherence_20m.tif": "9120f2b1d56980e2c9f25fad7b00006b93c9372df3811bf04991673f6a7bfaaf",
+        "nisar_gslc_20260622_20260704_coherence_5m.tif": "9f967cf762f6c672db9d3078076532b8198fbabd6ddb18b72ec63dd1a7b472c0"
+      }
+    },
+    {
+      "pair": [
+        "20260704",
+        "20260716"
+      ],
+      "bbox_wgs84": [
+        114.6739364434803,
+        -2.692615203081613,
+        114.69194878822319,
+        -2.674501616725995
+      ],
+      "mission_window": [
+        2584,
+        1409,
+        100,
+        100
+      ],
+      "mission_bounds": [
+        241380.0,
+        9702140.0,
+        243380.0,
+        9704140.0
+      ],
+      "input_inventory_not_content_hashes": [
+        {
+          "path": "$DATA_ROOT/grid_products/_deletable_work/nisar/gslc_subset/NISAR_L2_PR_GSLC_024_125_A_176_4005_DHDH_A_20260704T220710_20260704T220745_P05023_N_F_J_001_peatguard_aoi.h5",
+          "size_bytes": 875532855,
+          "mtime_ns": 1784833559432203112
+        },
+        {
+          "path": "$DATA_ROOT/grid_products/_deletable_work/nisar/gslc_subset/NISAR_L2_PR_GSLC_025_125_A_176_4005_DHDH_A_20260716T220710_20260716T220744_P05023_N_F_J_001_peatguard_aoi.h5",
+          "size_bytes": 875467343,
+          "mtime_ns": 1784833435946576568
+        },
+        {
+          "path": "$DATA_ROOT/grid_products/_deletable_work/nisar/gunw_products/nisar_gunw_20260704_20260716_wrapped_phase_20m.tif",
+          "size_bytes": 48556642,
+          "mtime_ns": 1788182667290045130
+        },
+        {
+          "path": "$DATA_ROOT/grid_products/_deletable_work/nisar/gunw_products/nisar_gunw_20260704_20260716_coherence_20m.tif",
+          "size_bytes": 47378464,
+          "mtime_ns": 1788182669074989997
+        }
+      ],
+      "individually_gated": [
+        {
+          "mode": "unit_phasor",
+          "minimum_strength": 0.0,
+          "phase": {
+            "selected_convention": "same_sign",
+            "selected_fine_phase_multiplier": 1,
+            "candidates": {
+              "same_sign": {
+                "fine_phase_multiplier": 1,
+                "constant_circular_offset_rad": 0.6241094246265583,
+                "valid_pixels": 8571,
+                "circular_mae_rad": 0.44647416037441606,
+                "circular_rmse_rad": 0.6403523070035355,
+                "circular_p95_abs_rad_sample": 1.2715079433999028,
+                "resultant_length": 0.8340705082876527,
+                "sample_pixels": 5000
+              },
+              "opposite_sign": {
+                "fine_phase_multiplier": -1,
+                "constant_circular_offset_rad": -1.9842668143510986,
+                "valid_pixels": 8571,
+                "circular_mae_rad": 0.8625820561610379,
+                "circular_rmse_rad": 1.1200307753086192,
+                "circular_p95_abs_rad_sample": 2.4881522565245486,
+                "resultant_length": 0.5523322900516486,
+                "sample_pixels": 5000
+              }
+            }
+          },
+          "coherence": {
+            "valid_pixels": 10000,
+            "fine_mean": 0.4603165737837553,
+            "mission_mean": 0.4720040173109621,
+            "bias_fine_minus_mission": -0.011687443527206779,
+            "mae": 0.05797774600870907,
+            "rmse": 0.07385918853894653,
+            "pearson": 0.9019698115119527,
+            "spearman_sample": 0.8951323213412926,
+            "spearman_sample_pixels": 5000,
+            "mean_circular_aggregation_strength": 0.4095238768013194,
+            "threshold_coverage": {
+              "0.25": {
+                "fine_fraction": 0.8887,
+                "mission_fraction": 0.9102,
+                "both_fraction": 0.8571
+              },
+              "0.35": {
+                "fine_fraction": 0.7234,
+                "mission_fraction": 0.7553,
+                "both_fraction": 0.676
+              },
+              "0.5": {
+                "fine_fraction": 0.3954,
+                "mission_fraction": 0.4243,
+                "both_fraction": 0.3416
+              },
+              "0.7": {
+                "fine_fraction": 0.0849,
+                "mission_fraction": 0.0918,
+                "both_fraction": 0.0676
+              }
+            }
+          },
+          "release_gates": {
+            "supporting_coherence": {
+              "passed": false,
+              "checks": {
+                "at_least_1000000_valid_pixels": false,
+                "absolute_bias_at_most_0.03": true,
+                "mae_at_most_0.10": true,
+                "pearson_at_least_0.85": true
+              },
+              "interpretation": "Passing permits a quality/observability layer only."
+            },
+            "displacement_phase": {
+              "passed": false,
+              "checks": {
+                "expected_same_sign_selected": true,
+                "at_least_1000000_valid_pixels": false,
+                "circular_mae_at_most_0.10_rad": false,
+                "circular_rmse_at_most_0.15_rad": false,
+                "resultant_length_at_least_0.98": false
+              },
+              "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+            }
+          }
+        },
+        {
+          "mode": "complex_weighted",
+          "minimum_strength": 0.0,
+          "phase": {
+            "selected_convention": "same_sign",
+            "selected_fine_phase_multiplier": 1,
+            "candidates": {
+              "same_sign": {
+                "fine_phase_multiplier": 1,
+                "constant_circular_offset_rad": 0.6269420796442555,
+                "valid_pixels": 8571,
+                "circular_mae_rad": 0.3454478277858354,
+                "circular_rmse_rad": 0.5001780708792176,
+                "circular_p95_abs_rad_sample": 0.9699033654533499,
+                "resultant_length": 0.8928802305890176,
+                "sample_pixels": 5000
+              },
+              "opposite_sign": {
+                "fine_phase_multiplier": -1,
+                "constant_circular_offset_rad": -2.0010678226643073,
+                "valid_pixels": 8571,
+                "circular_mae_rad": 0.8183618548218763,
+                "circular_rmse_rad": 1.0697841466415776,
+                "circular_p95_abs_rad_sample": 2.465281645714582,
+                "resultant_length": 0.5864319928569826,
+                "sample_pixels": 5000
+              }
+            }
+          },
+          "coherence": {
+            "valid_pixels": 10000,
+            "fine_mean": 0.4603165737837553,
+            "mission_mean": 0.4720040173109621,
+            "bias_fine_minus_mission": -0.011687443527206779,
+            "mae": 0.05797774600870907,
+            "rmse": 0.07385918853894653,
+            "pearson": 0.9019698115119527,
+            "spearman_sample": 0.8951323213412926,
+            "spearman_sample_pixels": 5000,
+            "mean_circular_aggregation_strength": 0.5641309265505057,
+            "threshold_coverage": {
+              "0.25": {
+                "fine_fraction": 0.8887,
+                "mission_fraction": 0.9102,
+                "both_fraction": 0.8571
+              },
+              "0.35": {
+                "fine_fraction": 0.7234,
+                "mission_fraction": 0.7553,
+                "both_fraction": 0.676
+              },
+              "0.5": {
+                "fine_fraction": 0.3954,
+                "mission_fraction": 0.4243,
+                "both_fraction": 0.3416
+              },
+              "0.7": {
+                "fine_fraction": 0.0849,
+                "mission_fraction": 0.0918,
+                "both_fraction": 0.0676
+              }
+            }
+          },
+          "release_gates": {
+            "supporting_coherence": {
+              "passed": false,
+              "checks": {
+                "at_least_1000000_valid_pixels": false,
+                "absolute_bias_at_most_0.03": true,
+                "mae_at_most_0.10": true,
+                "pearson_at_least_0.85": true
+              },
+              "interpretation": "Passing permits a quality/observability layer only."
+            },
+            "displacement_phase": {
+              "passed": false,
+              "checks": {
+                "expected_same_sign_selected": true,
+                "at_least_1000000_valid_pixels": false,
+                "circular_mae_at_most_0.10_rad": false,
+                "circular_rmse_at_most_0.15_rad": false,
+                "resultant_length_at_least_0.98": false
+              },
+              "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+            }
+          }
+        },
+        {
+          "mode": "unit_phasor",
+          "minimum_strength": 0.25,
+          "phase": {
+            "selected_convention": "same_sign",
+            "selected_fine_phase_multiplier": 1,
+            "candidates": {
+              "same_sign": {
+                "fine_phase_multiplier": 1,
+                "constant_circular_offset_rad": 0.621057180439171,
+                "valid_pixels": 7164,
+                "circular_mae_rad": 0.37454490151320213,
+                "circular_rmse_rad": 0.5186513574373431,
+                "circular_p95_abs_rad_sample": 1.0377977573620647,
+                "resultant_length": 0.8823869607587923,
+                "sample_pixels": 5000
+              },
+              "opposite_sign": {
+                "fine_phase_multiplier": -1,
+                "constant_circular_offset_rad": -1.983153342163028,
+                "valid_pixels": 7164,
+                "circular_mae_rad": 0.8107517575692401,
+                "circular_rmse_rad": 1.0591010588331664,
+                "circular_p95_abs_rad_sample": 2.418791036864039,
+                "resultant_length": 0.5924281662458492,
+                "sample_pixels": 5000
+              }
+            }
+          },
+          "coherence": {
+            "valid_pixels": 10000,
+            "fine_mean": 0.4603165737837553,
+            "mission_mean": 0.4720040173109621,
+            "bias_fine_minus_mission": -0.011687443527206779,
+            "mae": 0.05797774600870907,
+            "rmse": 0.07385918853894653,
+            "pearson": 0.9019698115119527,
+            "spearman_sample": 0.8951323213412926,
+            "spearman_sample_pixels": 5000,
+            "mean_circular_aggregation_strength": 0.4095238768013194,
+            "threshold_coverage": {
+              "0.25": {
+                "fine_fraction": 0.8887,
+                "mission_fraction": 0.9102,
+                "both_fraction": 0.8571
+              },
+              "0.35": {
+                "fine_fraction": 0.7234,
+                "mission_fraction": 0.7553,
+                "both_fraction": 0.676
+              },
+              "0.5": {
+                "fine_fraction": 0.3954,
+                "mission_fraction": 0.4243,
+                "both_fraction": 0.3416
+              },
+              "0.7": {
+                "fine_fraction": 0.0849,
+                "mission_fraction": 0.0918,
+                "both_fraction": 0.0676
+              }
+            }
+          },
+          "release_gates": {
+            "supporting_coherence": {
+              "passed": false,
+              "checks": {
+                "at_least_1000000_valid_pixels": false,
+                "absolute_bias_at_most_0.03": true,
+                "mae_at_most_0.10": true,
+                "pearson_at_least_0.85": true
+              },
+              "interpretation": "Passing permits a quality/observability layer only."
+            },
+            "displacement_phase": {
+              "passed": false,
+              "checks": {
+                "expected_same_sign_selected": true,
+                "at_least_1000000_valid_pixels": false,
+                "circular_mae_at_most_0.10_rad": false,
+                "circular_rmse_at_most_0.15_rad": false,
+                "resultant_length_at_least_0.98": false
+              },
+              "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+            }
+          }
+        },
+        {
+          "mode": "complex_weighted",
+          "minimum_strength": 0.25,
+          "phase": {
+            "selected_convention": "same_sign",
+            "selected_fine_phase_multiplier": 1,
+            "candidates": {
+              "same_sign": {
+                "fine_phase_multiplier": 1,
+                "constant_circular_offset_rad": 0.6259031613905516,
+                "valid_pixels": 8220,
+                "circular_mae_rad": 0.32578363936205035,
+                "circular_rmse_rad": 0.46119461910019327,
+                "circular_p95_abs_rad_sample": 0.9072745660703097,
+                "resultant_length": 0.9058602506173444,
+                "sample_pixels": 5000
+              },
+              "opposite_sign": {
+                "fine_phase_multiplier": -1,
+                "constant_circular_offset_rad": -1.9986561959825835,
+                "valid_pixels": 8220,
+                "circular_mae_rad": 0.8063631539199555,
+                "circular_rmse_rad": 1.0551513070453842,
+                "circular_p95_abs_rad_sample": 2.431684442684908,
+                "resultant_length": 0.595615655096314,
+                "sample_pixels": 5000
+              }
+            }
+          },
+          "coherence": {
+            "valid_pixels": 10000,
+            "fine_mean": 0.4603165737837553,
+            "mission_mean": 0.4720040173109621,
+            "bias_fine_minus_mission": -0.011687443527206779,
+            "mae": 0.05797774600870907,
+            "rmse": 0.07385918853894653,
+            "pearson": 0.9019698115119527,
+            "spearman_sample": 0.8951323213412926,
+            "spearman_sample_pixels": 5000,
+            "mean_circular_aggregation_strength": 0.5641309265505057,
+            "threshold_coverage": {
+              "0.25": {
+                "fine_fraction": 0.8887,
+                "mission_fraction": 0.9102,
+                "both_fraction": 0.8571
+              },
+              "0.35": {
+                "fine_fraction": 0.7234,
+                "mission_fraction": 0.7553,
+                "both_fraction": 0.676
+              },
+              "0.5": {
+                "fine_fraction": 0.3954,
+                "mission_fraction": 0.4243,
+                "both_fraction": 0.3416
+              },
+              "0.7": {
+                "fine_fraction": 0.0849,
+                "mission_fraction": 0.0918,
+                "both_fraction": 0.0676
+              }
+            }
+          },
+          "release_gates": {
+            "supporting_coherence": {
+              "passed": false,
+              "checks": {
+                "at_least_1000000_valid_pixels": false,
+                "absolute_bias_at_most_0.03": true,
+                "mae_at_most_0.10": true,
+                "pearson_at_least_0.85": true
+              },
+              "interpretation": "Passing permits a quality/observability layer only."
+            },
+            "displacement_phase": {
+              "passed": false,
+              "checks": {
+                "expected_same_sign_selected": true,
+                "at_least_1000000_valid_pixels": false,
+                "circular_mae_at_most_0.10_rad": false,
+                "circular_rmse_at_most_0.15_rad": false,
+                "resultant_length_at_least_0.98": false
+              },
+              "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+            }
+          }
+        }
+      ],
+      "identical_pixel_support": [
+        {
+          "minimum_coherence": 0.25,
+          "minimum_strength_in_both_modes": 0.0,
+          "common_pixels": 8571,
+          "modes": {
+            "unit_phasor": {
+              "same_sign": {
+                "circular_offset_rad": 0.6241094246265583,
+                "circular_mae_rad": 0.44647416037441606,
+                "circular_rmse_rad": 0.6403523070035355,
+                "resultant_length": 0.8340705082876527
+              },
+              "opposite_sign": {
+                "circular_offset_rad": -1.9842668143510986,
+                "circular_mae_rad": 0.8625820561610379,
+                "circular_rmse_rad": 1.1200307753086192,
+                "resultant_length": 0.5523322900516486
+              }
+            },
+            "complex_weighted": {
+              "same_sign": {
+                "circular_offset_rad": 0.6269420796442555,
+                "circular_mae_rad": 0.3454478277858354,
+                "circular_rmse_rad": 0.5001780708792176,
+                "resultant_length": 0.8928802305890176
+              },
+              "opposite_sign": {
+                "circular_offset_rad": -2.0010678226643073,
+                "circular_mae_rad": 0.8183618548218763,
+                "circular_rmse_rad": 1.0697841466415776,
+                "resultant_length": 0.5864319928569826
+              }
+            }
+          }
+        },
+        {
+          "minimum_coherence": 0.25,
+          "minimum_strength_in_both_modes": 0.25,
+          "common_pixels": 7094,
+          "modes": {
+            "unit_phasor": {
+              "same_sign": {
+                "circular_offset_rad": 0.6211933017899329,
+                "circular_mae_rad": 0.3686223959080276,
+                "circular_rmse_rad": 0.5055745348493961,
+                "resultant_length": 0.8866478246926726
+              },
+              "opposite_sign": {
+                "circular_offset_rad": -1.9839796920312207,
+                "circular_mae_rad": 0.8081244635911385,
+                "circular_rmse_rad": 1.055651346439117,
+                "resultant_length": 0.594625437775755
+              }
+            },
+            "complex_weighted": {
+              "same_sign": {
+                "circular_offset_rad": 0.6238783750211663,
+                "circular_mae_rad": 0.3019759576696128,
+                "circular_rmse_rad": 0.4223725087042179,
+                "resultant_length": 0.9194376401805568
+              },
+              "opposite_sign": {
+                "circular_offset_rad": -1.9892886836422723,
+                "circular_mae_rad": 0.7821829493432965,
+                "circular_rmse_rad": 1.0269277341333494,
+                "resultant_length": 0.6141423852730382
+              }
+            }
+          }
+        }
+      ],
+      "output_raster_hashes": {
+        "nisar_gslc_20260704_20260716_wrapped_phase_5m.tif": "aa58f5460ad518e768e08fe0fed492dbd11c7031e225eb88f48c5fa6245d9cbe",
+        "nisar_gslc_20260704_20260716_coherence_5m.tif": "799dac17db56edf99ac7ca600f8062a0670d3367407d56b9dd0ac70d4e3a3abf",
+        "nisar_gslc_20260704_20260716_complex_cross_product_5m.tif": "0b7be950672d8967e0c0e48a4c390cc2c6f86b468b51b3038d107f4d361ac986",
+        "mission_phase_20m.tif": "3697972b5b1f1e284f6e230ffeb1b01a1f917843ec1fc3eb62af1202c95bb596",
+        "mission_coherence_20m.tif": "ec1416a57716540cab4f48a34aa90718d5a5dec232954e1f196087e136d44a4f"
+      }
+    }
+  ],
+  "output_data_bytes_before_summary": 5722911
+}

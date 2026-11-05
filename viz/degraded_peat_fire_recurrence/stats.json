@@ -1,0 +1,1478 @@
+{
+ "generated_from": "deliverables/degraded_peat_fire_recurrence/build.py",
+ "work_grid": {
+  "shape": [
+   1000,
+   1050
+  ],
+  "lon0": 114.2,
+  "lat0": -2.41,
+  "step_deg": 0.0006,
+  "cell_km2": 0.004451378414353599,
+  "extent": [
+   114.2,
+   114.83,
+   -3.0100000000000002,
+   -2.41
+  ]
+ },
+ "fire_grid_500m": {
+  "shape": [
+   134,
+   140
+  ],
+  "step_deg": 0.0045,
+  "cell_km2": 0.25039003580738994,
+  "extent": [
+   114.2,
+   114.83,
+   -3.013,
+   -2.41
+  ],
+  "class_rule": "majority of degraded / intact / non-peat work cells by centre; no land = excluded",
+  "modis_rule": "each MODIS detection marks the 500 m cells whose centres lie within 500 m",
+  "viirs_rule": "each VIIRS detection marks the 500 m cell containing it"
+ },
+ "fire_grid_1km_modis": {
+  "shape": [
+   67,
+   70
+  ],
+  "step_deg": 0.009,
+  "extent": [
+   114.2,
+   114.83,
+   -3.013,
+   -2.41
+  ],
+  "note": "MODIS-only, all years 2001 to 2024, 1 km"
+ },
+ "definitions": {
+  "peat": "PeatGrids mean thickness >= 50 cm, minus water_mask and rivers [E dataset, S cutoff]",
+  "crit_canal": "binary dilation of canals.npy by a disk of radius 15 cells (~1 km) [S]",
+  "crit_burn": "NBR < 0.45 in >= 2 valid epochs of [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2022, 2023, 2024, 2025]; NaN ignored; [2026] excluded [S]",
+  "crit_sink": "Tay et al. 2025 ALOS-2 long-term rate < -5.0 mm/yr where covered [S]",
+  "suspected_degraded": "peat AND (crit_canal OR crit_burn OR crit_sink) [S, screening, not ground-truthed]",
+  "fire_return_count": "years 2001 to 2024 with fire per 500 m cell; MODIS 1 km to 2011, VIIRS 375 m from 2012 [E detections, S gridding]",
+  "viirs_filter": "type == 0 (vegetation fire), confidence != low, NOAA-20 dropped if an S-NPP detection within 0.375 km and 1.0 h"
+ },
+ "peatgrids": {
+  "crs": "EPSG:4326",
+  "nodata": null,
+  "thickness_cm_min": 55.29095458984375,
+  "thickness_cm_median": 171.00604248046875,
+  "thickness_cm_max": 628.0797119140625,
+  "nan_fraction": 0.0,
+  "frac_ge_50cm": 1.0,
+  "frac_ge_100cm": 0.9310485714285714,
+  "frac_ge_150cm": 0.6306161904761904,
+  "frac_ge_200cm": 0.3351295238095238
+ },
+ "areas_km2": {
+  "box_km2": 4673.947335071279,
+  "water_km2": 148.16413052175955,
+  "peat_km2": 4525.78320454952,
+  "nonpeat_km2": 0.0,
+  "degraded_km2": 4322.088128308698,
+  "intact_km2": 203.6950762408207,
+  "degraded_frac_of_peat": 0.9549923036445809,
+  "degraded_frac_of_box": 0.9247190476190477,
+  "crit_canal_km2": 4288.840782931891,
+  "crit_burn_km2": 1403.0121569064534,
+  "crit_sink_km2": 94.0709800305346,
+  "crit_canal_only_km2": 2868.9400963213807,
+  "crit_burn_only_km2": 29.01408450475676,
+  "crit_sink_only_km2": 4.179844331078029,
+  "crit_all_three_km2": 43.88168840869778,
+  "tay_cover_pct": 10.92952380952381,
+  "sites_burning": 6,
+  "degraded_incl_nbr2026_km2": 4324.109054108815
+ },
+ "fractions_of_box": {
+  "peat": 0.9683,
+  "degraded": 0.9247190476190477,
+  "intact": 0.04358095238095238,
+  "nonpeat": 0.0,
+  "water": 0.0317,
+  "crit_canal": 0.9176057142857142,
+  "crit_burn": 0.30017714285714286,
+  "crit_sink": 0.020126666666666668
+ },
+ "nbr": {
+  "epochs_used": [
+   1990,
+   1995,
+   2000,
+   2005,
+   2010,
+   2015,
+   2020,
+   2022,
+   2023,
+   2024,
+   2025
+  ],
+  "excluded": [
+   2026
+  ],
+  "threshold": 0.45,
+  "min_epochs": 2,
+  "valid_epochs_per_cell_min": 9,
+  "valid_epochs_per_cell_mean": 10.62863142857143,
+  "frac_cells_low_ge2": 0.30287714285714284
+ },
+ "class_counts_500m": {
+  "degraded": 17956,
+  "intact": 804,
+  "nonpeat": 0,
+  "no_land": 0
+ },
+ "recurrence_500m_mixed_sensor": {
+  "suspected_degraded_peat": {
+   "cells": 17956,
+   "area_km2": 4496.0,
+   "frac_ge1_fire_years": 0.7828580975718423,
+   "frac_ge3_fire_years": 0.40521274225885495,
+   "frac_ge5_fire_years": 0.159166852305636,
+   "mean_fire_years_per_cell": 2.3541991534863,
+   "max_fire_years": 12
+  },
+  "intact_peat": {
+   "cells": 804,
+   "area_km2": 201.3,
+   "frac_ge1_fire_years": 0.7350746268656716,
+   "frac_ge3_fire_years": 0.31840796019900497,
+   "frac_ge5_fire_years": 0.10696517412935323,
+   "mean_fire_years_per_cell": 1.945273631840796,
+   "max_fire_years": 10
+  },
+  "non_peat": {
+   "cells": 0,
+   "area_km2": 0.0,
+   "frac_ge1_fire_years": null,
+   "frac_ge3_fire_years": null,
+   "frac_ge5_fire_years": null,
+   "mean_fire_years_per_cell": null,
+   "max_fire_years": null
+  }
+ },
+ "recurrence_500m_modis_only": {
+  "suspected_degraded_peat": {
+   "cells": 17956,
+   "area_km2": 4496.0,
+   "frac_ge1_fire_years": 0.7408665627088439,
+   "frac_ge3_fire_years": 0.3539763867231009,
+   "frac_ge5_fire_years": 0.12758966362218757,
+   "mean_fire_years_per_cell": 2.097683225662731,
+   "max_fire_years": 12
+  },
+  "intact_peat": {
+   "cells": 804,
+   "area_km2": 201.3,
+   "frac_ge1_fire_years": 0.7139303482587065,
+   "frac_ge3_fire_years": 0.29850746268656714,
+   "frac_ge5_fire_years": 0.10696517412935323,
+   "mean_fire_years_per_cell": 1.8694029850746268,
+   "max_fire_years": 10
+  },
+  "non_peat": {
+   "cells": 0,
+   "area_km2": 0.0,
+   "frac_ge1_fire_years": null,
+   "frac_ge3_fire_years": null,
+   "frac_ge5_fire_years": null,
+   "mean_fire_years_per_cell": null,
+   "max_fire_years": null
+  }
+ },
+ "recurrence_1km_modis_only": {
+  "suspected_degraded_peat": {
+   "cells": 4503,
+   "area_km2": 4510.0,
+   "frac_ge1_fire_years": 0.7848101265822784,
+   "frac_ge3_fire_years": 0.4343770819453698,
+   "frac_ge5_fire_years": 0.17721518987341772,
+   "mean_fire_years_per_cell": 2.4847879191650013,
+   "max_fire_years": 12
+  },
+  "intact_peat": {
+   "cells": 187,
+   "area_km2": 187.3,
+   "frac_ge1_fire_years": 0.7219251336898396,
+   "frac_ge3_fire_years": 0.32085561497326204,
+   "frac_ge5_fire_years": 0.1443850267379679,
+   "mean_fire_years_per_cell": 2.06951871657754,
+   "max_fire_years": 11
+  },
+  "non_peat": {
+   "cells": 0,
+   "area_km2": 0.0,
+   "frac_ge1_fire_years": null,
+   "frac_ge3_fire_years": null,
+   "frac_ge5_fire_years": null,
+   "mean_fire_years_per_cell": null,
+   "max_fire_years": null
+  }
+ },
+ "recurrence_sensitivity_to_peat_cutoff_500m": {
+  "peat_ge_50cm": {
+   "suspected_degraded_peat": {
+    "cells": 17956,
+    "area_km2": 4496.0,
+    "frac_ge1_fire_years": 0.7828580975718423,
+    "frac_ge3_fire_years": 0.40521274225885495,
+    "frac_ge5_fire_years": 0.159166852305636,
+    "mean_fire_years_per_cell": 2.3541991534863,
+    "max_fire_years": 12
+   },
+   "intact_peat": {
+    "cells": 804,
+    "area_km2": 201.3,
+    "frac_ge1_fire_years": 0.7350746268656716,
+    "frac_ge3_fire_years": 0.31840796019900497,
+    "frac_ge5_fire_years": 0.10696517412935323,
+    "mean_fire_years_per_cell": 1.945273631840796,
+    "max_fire_years": 10
+   },
+   "non_peat": {
+    "cells": 0,
+    "area_km2": 0.0,
+    "frac_ge1_fire_years": null,
+    "frac_ge3_fire_years": null,
+    "frac_ge5_fire_years": null,
+    "mean_fire_years_per_cell": null,
+    "max_fire_years": null
+   }
+  },
+  "peat_ge_100cm": {
+   "suspected_degraded_peat": {
+    "cells": 16683,
+    "area_km2": 4177.3,
+    "frac_ge1_fire_years": 0.7886471258166996,
+    "frac_ge3_fire_years": 0.4173110351855182,
+    "frac_ge5_fire_years": 0.1676556974165318,
+    "mean_fire_years_per_cell": 2.413594677216328,
+    "max_fire_years": 12
+   },
+   "intact_peat": {
+    "cells": 804,
+    "area_km2": 201.3,
+    "frac_ge1_fire_years": 0.7350746268656716,
+    "frac_ge3_fire_years": 0.31840796019900497,
+    "frac_ge5_fire_years": 0.10696517412935323,
+    "mean_fire_years_per_cell": 1.945273631840796,
+    "max_fire_years": 10
+   },
+   "non_peat": {
+    "cells": 1273,
+    "area_km2": 318.7,
+    "frac_ge1_fire_years": 0.7069913589945012,
+    "frac_ge3_fire_years": 0.24666142969363708,
+    "frac_ge5_fire_years": 0.047918303220738416,
+    "mean_fire_years_per_cell": 1.5758051846032992,
+    "max_fire_years": 8
+   }
+  },
+  "peat_ge_150cm": {
+   "suspected_degraded_peat": {
+    "cells": 11005,
+    "area_km2": 2755.5,
+    "frac_ge1_fire_years": 0.7920036347114948,
+    "frac_ge3_fire_years": 0.4643343934575193,
+    "frac_ge5_fire_years": 0.21281235801908224,
+    "mean_fire_years_per_cell": 2.6537028623353023,
+    "max_fire_years": 12
+   },
+   "intact_peat": {
+    "cells": 794,
+    "area_km2": 198.8,
+    "frac_ge1_fire_years": 0.7304785894206549,
+    "frac_ge3_fire_years": 0.3161209068010076,
+    "frac_ge5_fire_years": 0.10831234256926953,
+    "mean_fire_years_per_cell": 1.938287153652393,
+    "max_fire_years": 10
+   },
+   "non_peat": {
+    "cells": 6961,
+    "area_km2": 1743.0,
+    "frac_ge1_fire_years": 0.7688550495618446,
+    "frac_ge3_fire_years": 0.31188047694296794,
+    "frac_ge5_fire_years": 0.07412728056313748,
+    "mean_fire_years_per_cell": 1.880907915529378,
+    "max_fire_years": 12
+   }
+  },
+  "peat_ge_200cm": {
+   "suspected_degraded_peat": {
+    "cells": 5536,
+    "area_km2": 1386.2,
+    "frac_ge1_fire_years": 0.7498193641618497,
+    "frac_ge3_fire_years": 0.4418352601156069,
+    "frac_ge5_fire_years": 0.22579479768786126,
+    "mean_fire_years_per_cell": 2.5971820809248554,
+    "max_fire_years": 12
+   },
+   "intact_peat": {
+    "cells": 720,
+    "area_km2": 180.3,
+    "frac_ge1_fire_years": 0.7055555555555556,
+    "frac_ge3_fire_years": 0.3013888888888889,
+    "frac_ge5_fire_years": 0.10277777777777777,
+    "mean_fire_years_per_cell": 1.851388888888889,
+    "max_fire_years": 10
+   },
+   "non_peat": {
+    "cells": 12504,
+    "area_km2": 3130.9,
+    "frac_ge1_fire_years": 0.7988643634037108,
+    "frac_ge3_fire_years": 0.3893953934740883,
+    "frac_ge5_fire_years": 0.1295585412667946,
+    "mean_fire_years_per_cell": 2.2492802303262955,
+    "max_fire_years": 12
+   }
+  }
+ },
+ "fire_years_vs_canal_distance": {
+  "bands": [
+   {
+    "band_km": [
+     0,
+     0.5
+    ],
+    "label": "0 to 0.5",
+    "n_cells": 869870,
+    "area_km2": 3872.1,
+    "mean_fire_years": 2.398042236196213,
+    "frac_ge1": 0.8005702001448493,
+    "frac_ge3": 0.41261222941359055
+   },
+   {
+    "band_km": [
+     0.5,
+     1
+    ],
+    "label": "0.5 to 1",
+    "n_cells": 92063,
+    "area_km2": 409.8,
+    "mean_fire_years": 2.5151363740047574,
+    "frac_ge1": 0.7758382846529007,
+    "frac_ge3": 0.44291409143738525
+   },
+   {
+    "band_km": [
+     1,
+     2
+    ],
+    "label": "1 to 2",
+    "n_cells": 40703,
+    "area_km2": 181.2,
+    "mean_fire_years": 2.561506522860723,
+    "frac_ge1": 0.8583396801218584,
+    "frac_ge3": 0.45193229000319385
+   },
+   {
+    "band_km": [
+     2,
+     3
+    ],
+    "label": "2 to 3",
+    "n_cells": 11721,
+    "area_km2": 52.2,
+    "mean_fire_years": 1.0563091886357818,
+    "frac_ge1": 0.5423598669055542,
+    "frac_ge3": 0.13190000853169526
+   },
+   {
+    "band_km": [
+     3,
+     5
+    ],
+    "label": "3 to 5",
+    "n_cells": 2358,
+    "area_km2": 10.5,
+    "mean_fire_years": 0.3608990670059372,
+    "frac_ge1": 0.26547921967769295,
+    "frac_ge3": 0.0453774385072095
+   },
+   {
+    "band_km": [
+     5,
+     null
+    ],
+    "label": "over 5",
+    "n_cells": 0,
+    "area_km2": 0.0,
+    "mean_fire_years": null,
+    "frac_ge1": null,
+    "frac_ge3": null
+   }
+  ],
+  "max_distance_km": 3.602734328163884,
+  "note": "work grid cells (0.0006 deg), water excluded; fire years from the 500 m mixed-sensor grid; canals.npy is a generous (max-resampled) Dadap 2021 mask"
+ },
+ "fire_years_histogram_500m": {
+  "0": 4112,
+  "1": 3722,
+  "2": 3394,
+  "3": 2654,
+  "4": 1934,
+  "5": 1383,
+  "6": 792,
+  "7": 404,
+  "8": 221,
+  "9": 88,
+  "10": 45,
+  "11": 9,
+  "12": 2
+ },
+ "per_year": {
+  "2001": {
+   "sensor": "MODIS",
+   "detections": 546,
+   "cells500": 987,
+   "cells1k_modis": 292,
+   "modis_detections_reference": 546
+  },
+  "2002": {
+   "sensor": "MODIS",
+   "detections": 2754,
+   "cells500": 4152,
+   "cells1k_modis": 1217,
+   "modis_detections_reference": 2754
+  },
+  "2003": {
+   "sensor": "MODIS",
+   "detections": 920,
+   "cells500": 1767,
+   "cells1k_modis": 522,
+   "modis_detections_reference": 920
+  },
+  "2004": {
+   "sensor": "MODIS",
+   "detections": 1383,
+   "cells500": 2762,
+   "cells1k_modis": 840,
+   "modis_detections_reference": 1383
+  },
+  "2005": {
+   "sensor": "MODIS",
+   "detections": 949,
+   "cells500": 1990,
+   "cells1k_modis": 612,
+   "modis_detections_reference": 949
+  },
+  "2006": {
+   "sensor": "MODIS",
+   "detections": 2675,
+   "cells500": 4379,
+   "cells1k_modis": 1281,
+   "modis_detections_reference": 2675
+  },
+  "2007": {
+   "sensor": "MODIS",
+   "detections": 396,
+   "cells500": 936,
+   "cells1k_modis": 283,
+   "modis_detections_reference": 396
+  },
+  "2008": {
+   "sensor": "MODIS",
+   "detections": 98,
+   "cells500": 295,
+   "cells1k_modis": 94,
+   "modis_detections_reference": 98
+  },
+  "2009": {
+   "sensor": "MODIS",
+   "detections": 2425,
+   "cells500": 3961,
+   "cells1k_modis": 1160,
+   "modis_detections_reference": 2425
+  },
+  "2010": {
+   "sensor": "MODIS",
+   "detections": 15,
+   "cells500": 44,
+   "cells1k_modis": 15,
+   "modis_detections_reference": 15
+  },
+  "2011": {
+   "sensor": "MODIS",
+   "detections": 542,
+   "cells500": 1419,
+   "cells1k_modis": 433,
+   "modis_detections_reference": 542
+  },
+  "2012": {
+   "sensor": "VIIRS",
+   "detections": 4658,
+   "cells500": 1804,
+   "cells1k_modis": 455,
+   "modis_detections_reference": 816,
+   "n_snpp": 4658,
+   "n_jpss1_kept": 0,
+   "n_jpss1_duplicates_dropped": 0,
+   "snpp_raw_in_box": 4826,
+   "snpp_dropped_type": 3,
+   "snpp_dropped_lowconf": 165,
+   "jpss1_raw_in_box": 0,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 0
+  },
+  "2013": {
+   "sensor": "VIIRS",
+   "detections": 1657,
+   "cells500": 1021,
+   "cells1k_modis": 242,
+   "modis_detections_reference": 321,
+   "n_snpp": 1657,
+   "n_jpss1_kept": 0,
+   "n_jpss1_duplicates_dropped": 0,
+   "snpp_raw_in_box": 1711,
+   "snpp_dropped_type": 0,
+   "snpp_dropped_lowconf": 54,
+   "jpss1_raw_in_box": 0,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 0
+  },
+  "2014": {
+   "sensor": "VIIRS",
+   "detections": 9598,
+   "cells500": 3996,
+   "cells1k_modis": 992,
+   "modis_detections_reference": 1926,
+   "n_snpp": 9598,
+   "n_jpss1_kept": 0,
+   "n_jpss1_duplicates_dropped": 0,
+   "snpp_raw_in_box": 9960,
+   "snpp_dropped_type": 3,
+   "snpp_dropped_lowconf": 359,
+   "jpss1_raw_in_box": 0,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 0
+  },
+  "2015": {
+   "sensor": "VIIRS",
+   "detections": 15528,
+   "cells500": 5789,
+   "cells1k_modis": 1418,
+   "modis_detections_reference": 2923,
+   "n_snpp": 15528,
+   "n_jpss1_kept": 0,
+   "n_jpss1_duplicates_dropped": 0,
+   "snpp_raw_in_box": 16111,
+   "snpp_dropped_type": 5,
+   "snpp_dropped_lowconf": 578,
+   "jpss1_raw_in_box": 0,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 0
+  },
+  "2016": {
+   "sensor": "VIIRS",
+   "detections": 309,
+   "cells500": 233,
+   "cells1k_modis": 33,
+   "modis_detections_reference": 54,
+   "n_snpp": 309,
+   "n_jpss1_kept": 0,
+   "n_jpss1_duplicates_dropped": 0,
+   "snpp_raw_in_box": 317,
+   "snpp_dropped_type": 1,
+   "snpp_dropped_lowconf": 7,
+   "jpss1_raw_in_box": 0,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 0
+  },
+  "2017": {
+   "sensor": "VIIRS",
+   "detections": 155,
+   "cells500": 136,
+   "cells1k_modis": 24,
+   "modis_detections_reference": 26,
+   "n_snpp": 155,
+   "n_jpss1_kept": 0,
+   "n_jpss1_duplicates_dropped": 0,
+   "snpp_raw_in_box": 162,
+   "snpp_dropped_type": 1,
+   "snpp_dropped_lowconf": 6,
+   "jpss1_raw_in_box": 0,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 0
+  },
+  "2018": {
+   "sensor": "VIIRS",
+   "detections": 2250,
+   "cells500": 1270,
+   "cells1k_modis": 236,
+   "modis_detections_reference": 418,
+   "n_snpp": 1803,
+   "n_jpss1_kept": 447,
+   "n_jpss1_duplicates_dropped": 1400,
+   "snpp_raw_in_box": 1923,
+   "snpp_dropped_type": 0,
+   "snpp_dropped_lowconf": 120,
+   "jpss1_raw_in_box": 1913,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 66
+  },
+  "2019": {
+   "sensor": "VIIRS",
+   "detections": 11278,
+   "cells500": 3884,
+   "cells1k_modis": 816,
+   "modis_detections_reference": 2132,
+   "n_snpp": 10439,
+   "n_jpss1_kept": 839,
+   "n_jpss1_duplicates_dropped": 9314,
+   "snpp_raw_in_box": 10820,
+   "snpp_dropped_type": 1,
+   "snpp_dropped_lowconf": 380,
+   "jpss1_raw_in_box": 10448,
+   "jpss1_dropped_type": 2,
+   "jpss1_dropped_lowconf": 293
+  },
+  "2020": {
+   "sensor": "VIIRS",
+   "detections": 218,
+   "cells500": 190,
+   "cells1k_modis": 15,
+   "modis_detections_reference": 15,
+   "n_snpp": 150,
+   "n_jpss1_kept": 68,
+   "n_jpss1_duplicates_dropped": 39,
+   "snpp_raw_in_box": 156,
+   "snpp_dropped_type": 0,
+   "snpp_dropped_lowconf": 6,
+   "jpss1_raw_in_box": 108,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 1
+  },
+  "2021": {
+   "sensor": "VIIRS",
+   "detections": 101,
+   "cells500": 91,
+   "cells1k_modis": 17,
+   "modis_detections_reference": 21,
+   "n_snpp": 55,
+   "n_jpss1_kept": 46,
+   "n_jpss1_duplicates_dropped": 19,
+   "snpp_raw_in_box": 55,
+   "snpp_dropped_type": 0,
+   "snpp_dropped_lowconf": 0,
+   "jpss1_raw_in_box": 66,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 1
+  },
+  "2022": {
+   "sensor": "VIIRS",
+   "detections": 137,
+   "cells500": 118,
+   "cells1k_modis": 23,
+   "modis_detections_reference": 25,
+   "n_snpp": 58,
+   "n_jpss1_kept": 79,
+   "n_jpss1_duplicates_dropped": 15,
+   "snpp_raw_in_box": 60,
+   "snpp_dropped_type": 0,
+   "snpp_dropped_lowconf": 2,
+   "jpss1_raw_in_box": 94,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 0
+  },
+  "2023": {
+   "sensor": "VIIRS",
+   "detections": 4621,
+   "cells500": 2460,
+   "cells1k_modis": 540,
+   "modis_detections_reference": 970,
+   "n_snpp": 3943,
+   "n_jpss1_kept": 678,
+   "n_jpss1_duplicates_dropped": 3299,
+   "snpp_raw_in_box": 4256,
+   "snpp_dropped_type": 1,
+   "snpp_dropped_lowconf": 312,
+   "jpss1_raw_in_box": 4099,
+   "jpss1_dropped_type": 2,
+   "jpss1_dropped_lowconf": 120
+  },
+  "2024": {
+   "sensor": "VIIRS",
+   "detections": 169,
+   "cells500": 152,
+   "cells1k_modis": 16,
+   "modis_detections_reference": 16,
+   "n_snpp": 101,
+   "n_jpss1_kept": 68,
+   "n_jpss1_duplicates_dropped": 61,
+   "snpp_raw_in_box": 119,
+   "snpp_dropped_type": 0,
+   "snpp_dropped_lowconf": 18,
+   "jpss1_raw_in_box": 142,
+   "jpss1_dropped_type": 0,
+   "jpss1_dropped_lowconf": 13
+  }
+ },
+ "firms_downloads": {
+  "viirs-snpp_2012_Indonesia.csv": "cached",
+  "viirs-snpp_2013_Indonesia.csv": "cached",
+  "viirs-snpp_2014_Indonesia.csv": "cached",
+  "viirs-snpp_2015_Indonesia.csv": "cached",
+  "viirs-snpp_2016_Indonesia.csv": "cached",
+  "viirs-snpp_2017_Indonesia.csv": "cached",
+  "viirs-snpp_2018_Indonesia.csv": "cached",
+  "viirs-snpp_2019_Indonesia.csv": "cached",
+  "viirs-snpp_2020_Indonesia.csv": "cached",
+  "viirs-snpp_2021_Indonesia.csv": "cached",
+  "viirs-snpp_2022_Indonesia.csv": "cached",
+  "viirs-snpp_2023_Indonesia.csv": "cached",
+  "viirs-snpp_2024_Indonesia.csv": "cached",
+  "viirs-jpss1_2018_Indonesia.csv": "cached",
+  "viirs-jpss1_2019_Indonesia.csv": "cached",
+  "viirs-jpss1_2020_Indonesia.csv": "cached",
+  "viirs-jpss1_2021_Indonesia.csv": "cached",
+  "viirs-jpss1_2022_Indonesia.csv": "cached",
+  "viirs-jpss1_2023_Indonesia.csv": "cached",
+  "viirs-jpss1_2024_Indonesia.csv": "cached"
+ },
+ "el_nino_years": [
+  2002,
+  2006,
+  2009,
+  2015,
+  2019,
+  2023
+ ],
+ "running_counter_threshold": 3,
+ "site_fire_years_500m": {
+  "D-01": 3,
+  "D-02": 7,
+  "D-03": 2,
+  "D-04": 5,
+  "D-05": 7,
+  "D-06": 4,
+  "D-07": 4,
+  "D-08": 5,
+  "D-09": 1,
+  "D-10": 6,
+  "D-11": 5,
+  "D-12": 2,
+  "D-13": 4,
+  "D-14": 5,
+  "D-15": 5,
+  "D-16": 4,
+  "D-17": 2,
+  "D-18": 2,
+  "D-19": 5,
+  "D-20": 4,
+  "D-21": 5,
+  "D-22": 4,
+  "D-23": 5,
+  "D-24": 5,
+  "D-25": 2,
+  "D-26": 3,
+  "D-27": 9,
+  "D-28": 4,
+  "D-29": 2,
+  "D-30": 1,
+  "D-31": 4,
+  "D-32": 5,
+  "D-33": 1,
+  "D-34": 6,
+  "D-35": 3,
+  "D-36": 7,
+  "D-37": 7,
+  "D-38": 5,
+  "D-39": 6,
+  "D-40": 3,
+  "D-41": 3,
+  "D-42": 7,
+  "D-43": 3,
+  "D-44": 4,
+  "D-45": 7,
+  "D-46": 3,
+  "D-47": 3,
+  "D-48": 1,
+  "D-49": 5,
+  "D-50": 8,
+  "D-51": 7,
+  "D-52": 5,
+  "D-53": 9,
+  "D-54": 3,
+  "D-55": 5,
+  "D-56": 3,
+  "D-57": 2,
+  "D-58": 7,
+  "D-59": 3,
+  "D-60": 4
+ },
+ "site_class_500m": {
+  "D-01": "degraded",
+  "D-02": "degraded",
+  "D-03": "degraded",
+  "D-04": "degraded",
+  "D-05": "degraded",
+  "D-06": "degraded",
+  "D-07": "degraded",
+  "D-08": "degraded",
+  "D-09": "degraded",
+  "D-10": "degraded",
+  "D-11": "degraded",
+  "D-12": "degraded",
+  "D-13": "degraded",
+  "D-14": "degraded",
+  "D-15": "degraded",
+  "D-16": "degraded",
+  "D-17": "degraded",
+  "D-18": "degraded",
+  "D-19": "degraded",
+  "D-20": "degraded",
+  "D-21": "degraded",
+  "D-22": "degraded",
+  "D-23": "degraded",
+  "D-24": "degraded",
+  "D-25": "degraded",
+  "D-26": "degraded",
+  "D-27": "degraded",
+  "D-28": "degraded",
+  "D-29": "degraded",
+  "D-30": "degraded",
+  "D-31": "degraded",
+  "D-32": "degraded",
+  "D-33": "degraded",
+  "D-34": "degraded",
+  "D-35": "degraded",
+  "D-36": "degraded",
+  "D-37": "degraded",
+  "D-38": "degraded",
+  "D-39": "degraded",
+  "D-40": "degraded",
+  "D-41": "degraded",
+  "D-42": "degraded",
+  "D-43": "degraded",
+  "D-44": "degraded",
+  "D-45": "degraded",
+  "D-46": "degraded",
+  "D-47": "degraded",
+  "D-48": "degraded",
+  "D-49": "degraded",
+  "D-50": "degraded",
+  "D-51": "degraded",
+  "D-52": "degraded",
+  "D-53": "degraded",
+  "D-54": "degraded",
+  "D-55": "degraded",
+  "D-56": "degraded",
+  "D-57": "degraded",
+  "D-58": "degraded",
+  "D-59": "degraded",
+  "D-60": "degraded"
+ },
+ "animation": {
+  "frames": [
+   {
+    "year": 2001,
+    "sensor": "MODIS",
+    "detections": 546,
+    "cells500": 987,
+    "sigma_factor": 1.012,
+    "footprint_km2": 297.8,
+    "glow_km2": 694.0,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 0,
+     "ge_1": 987,
+     "ge_n_degraded": 0,
+     "ge_1_degraded": 961,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.0,
+     "pct_ge_1_degraded": 0.05351971485854311
+    }
+   },
+   {
+    "year": 2002,
+    "sensor": "MODIS",
+    "detections": 2754,
+    "cells500": 4152,
+    "sigma_factor": 1.244,
+    "footprint_km2": 1238.6,
+    "glow_km2": 3261.1,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 0,
+     "ge_1": 4672,
+     "ge_n_degraded": 0,
+     "ge_1_degraded": 4441,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.0,
+     "pct_ge_1_degraded": 0.24732679884161282
+    }
+   },
+   {
+    "year": 2003,
+    "sensor": "MODIS",
+    "detections": 920,
+    "cells500": 1767,
+    "sigma_factor": 0.947,
+    "footprint_km2": 533.0,
+    "glow_km2": 1151.2,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 145,
+     "ge_1": 5672,
+     "ge_n_degraded": 142,
+     "ge_1_degraded": 5410,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.00790822009356204,
+     "pct_ge_1_degraded": 0.3012920472265538
+    }
+   },
+   {
+    "year": 2004,
+    "sensor": "MODIS",
+    "detections": 1383,
+    "cells500": 2762,
+    "sigma_factor": 1.12,
+    "footprint_km2": 853.9,
+    "glow_km2": 2309.2,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 389,
+     "ge_1": 7218,
+     "ge_n_degraded": 380,
+     "ge_1_degraded": 6935,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.021162842503898417,
+     "pct_ge_1_degraded": 0.38622187569614613
+    }
+   },
+   {
+    "year": 2005,
+    "sensor": "MODIS",
+    "detections": 949,
+    "cells500": 1990,
+    "sigma_factor": 1.159,
+    "footprint_km2": 595.9,
+    "glow_km2": 1780.1,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 701,
+     "ge_1": 8120,
+     "ge_n_degraded": 681,
+     "ge_1_degraded": 7817,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.03792604143461795,
+     "pct_ge_1_degraded": 0.43534194698151035
+    }
+   },
+   {
+    "year": 2006,
+    "sensor": "MODIS",
+    "detections": 2675,
+    "cells500": 4379,
+    "sigma_factor": 1.236,
+    "footprint_km2": 1289.6,
+    "glow_km2": 3483.4,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 1424,
+     "ge_1": 9887,
+     "ge_n_degraded": 1373,
+     "ge_1_degraded": 9476,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.07646469146803297,
+     "pct_ge_1_degraded": 0.5277344620182669
+    }
+   },
+   {
+    "year": 2007,
+    "sensor": "MODIS",
+    "detections": 396,
+    "cells500": 936,
+    "sigma_factor": 1.18,
+    "footprint_km2": 281.4,
+    "glow_km2": 844.1,
+    "levels": [
+     0.814,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 1626,
+     "ge_1": 10117,
+     "ge_n_degraded": 1572,
+     "ge_1_degraded": 9706,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.08754733793717977,
+     "pct_ge_1_degraded": 0.5405435509022054
+    }
+   },
+   {
+    "year": 2008,
+    "sensor": "MODIS",
+    "detections": 98,
+    "cells500": 295,
+    "sigma_factor": 1.248,
+    "footprint_km2": 93.5,
+    "glow_km2": 280.4,
+    "levels": [
+     0.908,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 1687,
+     "ge_1": 10210,
+     "ge_n_degraded": 1632,
+     "ge_1_degraded": 9799,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.09088883938516373,
+     "pct_ge_1_degraded": 0.5457228781465805
+    }
+   },
+   {
+    "year": 2009,
+    "sensor": "MODIS",
+    "detections": 2425,
+    "cells500": 3961,
+    "sigma_factor": 0.906,
+    "footprint_km2": 1179.8,
+    "glow_km2": 2395.0,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 2648,
+     "ge_1": 11249,
+     "ge_n_degraded": 2541,
+     "ge_1_degraded": 10803,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.14151258632212074,
+     "pct_ge_1_degraded": 0.6016373357095122
+    }
+   },
+   {
+    "year": 2010,
+    "sensor": "MODIS",
+    "detections": 15,
+    "cells500": 44,
+    "sigma_factor": 0.922,
+    "footprint_km2": 13.6,
+    "glow_km2": 27.0,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 2658,
+     "ge_1": 11260,
+     "ge_n_degraded": 2551,
+     "ge_1_degraded": 10814,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.14206950323011808,
+     "pct_ge_1_degraded": 0.6022499443083092
+    }
+   },
+   {
+    "year": 2011,
+    "sensor": "MODIS",
+    "detections": 542,
+    "cells500": 1419,
+    "sigma_factor": 1.174,
+    "footprint_km2": 435.9,
+    "glow_km2": 1307.7,
+    "levels": [
+     0.881,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 3017,
+     "ge_1": 11579,
+     "ge_n_degraded": 2910,
+     "ge_1_degraded": 11133,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.1620628202272221,
+     "pct_ge_1_degraded": 0.620015593673424
+    }
+   },
+   {
+    "year": 2012,
+    "sensor": "VIIRS",
+    "detections": 4658,
+    "cells500": 1804,
+    "sigma_factor": 0.919,
+    "footprint_km2": 454.6,
+    "glow_km2": 1098.4,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 3473,
+     "ge_1": 11888,
+     "ge_n_degraded": 3360,
+     "ge_1_degraded": 11442,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.1871240810871018,
+     "pct_ge_1_degraded": 0.6372243261305414
+    }
+   },
+   {
+    "year": 2013,
+    "sensor": "VIIRS",
+    "detections": 1657,
+    "cells500": 1021,
+    "sigma_factor": 0.936,
+    "footprint_km2": 247.9,
+    "glow_km2": 711.4,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 3697,
+     "ge_1": 12103,
+     "ge_n_degraded": 3584,
+     "ge_1_degraded": 11657,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.19959901982624192,
+     "pct_ge_1_degraded": 0.6491980396524839
+    }
+   },
+   {
+    "year": 2014,
+    "sensor": "VIIRS",
+    "detections": 9598,
+    "cells500": 3996,
+    "sigma_factor": 1.259,
+    "footprint_km2": 993.3,
+    "glow_km2": 2980.0,
+    "levels": [
+     0.759,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 4652,
+     "ge_1": 12830,
+     "ge_n_degraded": 4519,
+     "ge_1_degraded": 12378,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.251670750723992,
+     "pct_ge_1_degraded": 0.6893517487190911
+    }
+   },
+   {
+    "year": 2015,
+    "sensor": "VIIRS",
+    "detections": 15528,
+    "cells500": 5789,
+    "sigma_factor": 1.052,
+    "footprint_km2": 1435.9,
+    "glow_km2": 3257.4,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 5933,
+     "ge_1": 14076,
+     "ge_n_degraded": 5745,
+     "ge_1_degraded": 13524,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.31994876364446423,
+     "pct_ge_1_degraded": 0.7531744263755847
+    }
+   },
+   {
+    "year": 2016,
+    "sensor": "VIIRS",
+    "detections": 309,
+    "cells500": 233,
+    "sigma_factor": 1.284,
+    "footprint_km2": 53.3,
+    "glow_km2": 159.8,
+    "levels": [
+     1.223,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 5987,
+     "ge_1": 14094,
+     "ge_n_degraded": 5799,
+     "ge_1_degraded": 13542,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.3229561149476498,
+     "pct_ge_1_degraded": 0.7541768768099799
+    }
+   },
+   {
+    "year": 2017,
+    "sensor": "VIIRS",
+    "detections": 155,
+    "cells500": 136,
+    "sigma_factor": 1.271,
+    "footprint_km2": 30.1,
+    "glow_km2": 90.4,
+    "levels": [
+     1.177,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 6008,
+     "ge_1": 14102,
+     "ge_n_degraded": 5820,
+     "ge_1_degraded": 13549,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.3241256404544442,
+     "pct_ge_1_degraded": 0.7545667186455781
+    }
+   },
+   {
+    "year": 2018,
+    "sensor": "VIIRS",
+    "detections": 2250,
+    "cells500": 1270,
+    "sigma_factor": 1.044,
+    "footprint_km2": 297.0,
+    "glow_km2": 873.8,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 6276,
+     "ge_1": 14194,
+     "ge_n_degraded": 6078,
+     "ge_1_degraded": 13641,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.33849409668077524,
+     "pct_ge_1_degraded": 0.7596903541991535
+    }
+   },
+   {
+    "year": 2019,
+    "sensor": "VIIRS",
+    "detections": 11278,
+    "cells500": 3884,
+    "sigma_factor": 0.872,
+    "footprint_km2": 930.0,
+    "glow_km2": 1756.2,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 7063,
+     "ge_1": 14491,
+     "ge_n_degraded": 6818,
+     "ge_1_degraded": 13902,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.3797059478725774,
+     "pct_ge_1_degraded": 0.7742258854978837
+    }
+   },
+   {
+    "year": 2020,
+    "sensor": "VIIRS",
+    "detections": 218,
+    "cells500": 190,
+    "sigma_factor": 1.034,
+    "footprint_km2": 41.1,
+    "glow_km2": 123.2,
+    "levels": [
+     0.957,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 7093,
+     "ge_1": 14501,
+     "ge_n_degraded": 6848,
+     "ge_1_degraded": 13912,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.3813766985965694,
+     "pct_ge_1_degraded": 0.774782802405881
+    }
+   },
+   {
+    "year": 2021,
+    "sensor": "VIIRS",
+    "detections": 101,
+    "cells500": 91,
+    "sigma_factor": 1.178,
+    "footprint_km2": 20.7,
+    "glow_km2": 62.1,
+    "levels": [
+     1.122,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 7106,
+     "ge_1": 14510,
+     "ge_n_degraded": 6861,
+     "ge_1_degraded": 13920,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.38210069057696594,
+     "pct_ge_1_degraded": 0.7752283359322789
+    }
+   },
+   {
+    "year": 2022,
+    "sensor": "VIIRS",
+    "detections": 137,
+    "cells500": 118,
+    "sigma_factor": 0.924,
+    "footprint_km2": 26.5,
+    "glow_km2": 79.4,
+    "levels": [
+     0.761,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 7118,
+     "ge_1": 14515,
+     "ge_n_degraded": 6873,
+     "ge_1_degraded": 13925,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.3827689908665627,
+     "pct_ge_1_degraded": 0.7755067943862776
+    }
+   },
+   {
+    "year": 2023,
+    "sensor": "VIIRS",
+    "detections": 4621,
+    "cells500": 2460,
+    "sigma_factor": 0.844,
+    "footprint_km2": 568.8,
+    "glow_km2": 1206.0,
+    "levels": [
+     0.75,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 7520,
+     "ge_1": 14641,
+     "ge_n_degraded": 7264,
+     "ge_1_degraded": 14050,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.4045444419692582,
+     "pct_ge_1_degraded": 0.7824682557362441
+    }
+   },
+   {
+    "year": 2024,
+    "sensor": "VIIRS",
+    "detections": 169,
+    "cells500": 152,
+    "sigma_factor": 1.138,
+    "footprint_km2": 32.4,
+    "glow_km2": 97.2,
+    "levels": [
+     1.031,
+     2.0,
+     4.0
+    ],
+    "running": {
+     "ge_n": 7532,
+     "ge_1": 14648,
+     "ge_n_degraded": 7276,
+     "ge_1_degraded": 14057,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.40521274225885495,
+     "pct_ge_1_degraded": 0.7828580975718423
+    }
+   },
+   {
+    "year": 2026,
+    "sensor": "VIIRS+MODIS week",
+    "detections": 4254,
+    "cells_005deg": 106,
+    "sigma_factor": 0.889,
+    "footprint_km2": 526.8,
+    "glow_km2": 1050.9,
+    "running": {
+     "ge_n": 7532,
+     "ge_1": 14648,
+     "ge_n_degraded": 7276,
+     "ge_1_degraded": 14057,
+     "n_degraded": 17956,
+     "pct_ge_n_degraded": 0.40521274225885495,
+     "pct_ge_1_degraded": 0.7828580975718423
+    },
+    "window": [
+     "2026-10-01",
+     "2026-10-08"
+    ],
+    "fetched_at": "2026-10-09T01:44:43.825Z"
+   }
+  ],
+  "fps": 12,
+  "subframes_per_year": 4,
+  "hold_frames": 11,
+  "last_hold_frames": 36,
+  "mp4_frames": 300,
+  "gif_fps": 3,
+  "gif_frames": 75,
+  "size_mp4": [
+   1920,
+   1080
+  ],
+  "size_mp4_slide": [
+   1080,
+   1080
+  ],
+  "size_gif": [
+   720,
+   720
+  ],
+  "slide_lon_crop_deg": 0.015,
+  "fire_render": "footprint raster (MODIS 1 km, VIIRS 375 m), 300 m seeded jitter, Gaussian sigma {'MODIS': 0.9, 'VIIRS': 0.5} km x U(0.8,1.3) per year, normalised to one isolated detection's peak, smoothed multiplicative noise, bands at [0.75, 2.0, 4.0] detection equivalents, outer level raised if glow area > 3.0 x footprint area; flicker: alpha x clip(1+0.3 n, 0.7, 1.3), core x (1+0.12 n), noise sigma 4 cells, seeded per year and sub-frame"
+ },
+ "outputs": [
+  "deliverables/degraded_peat_fire_recurrence/map_suspected_degraded_peat.png",
+  "deliverables/degraded_peat_fire_recurrence/map_fire_recurrence_2001_2024.png",
+  "deliverables/degraded_peat_fire_recurrence/fire_years_vs_canal_distance.png",
+  "deliverables/degraded_peat_fire_recurrence/fires_return_to_degraded_peat_2001_2026.mp4",
+  "deliverables/degraded_peat_fire_recurrence/fires_return_to_degraded_peat_2001_2026_SLIDE.mp4",
+  "deliverables/degraded_peat_fire_recurrence/fires_return_to_degraded_peat_2001_2026.gif"
+ ]
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<alos2App>
+  <component name="alos2insar">
+    <property name="reference directory">REFDIR</property>
+    <property name="secondary directory">SECDIR</property>
+    <property name="reference polarization">HH</property>
+    <property name="secondary polarization">HH</property>
+    <property name="starting swath">2</property>
+    <property name="ending swath">4</property>
+    <property name="dem for coregistration">DEMPATH</property>
+    <property name="dem for geocoding">DEMPATH</property>
+    <property name="water body">WBDPATH</property>
+    <!-- audit finding 14: geocode snaphu connected components too, and force
+         nearest interpolation so integer labels are never blended (harmless
+         for continuous fields at our 3x3-averaged 90 m output grid) -->
+    <property name="geocode file list">['filt_*.unw', 'filt_*.unw.conncomp', '*.cor', '*.los', '*.ion']</property>
+    <property name="geocode interpolation method">nearest</property>
+  </component>
+</alos2App>

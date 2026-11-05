@@ -1,0 +1,71 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "PeatGuard NISAR: L-band InSAR coherence and relative displacement over drained tropical peat, fused with fire history to rank canal-blocking dam sites"
+type: software
+version: 0.2.0
+date-released: 2026-11-05
+license: MIT
+authors:
+  - family-names: Quak
+    given-names: Tommy
+    email: 7ommyquak@gmail.com
+    affiliation: "PeatGuard; National University of Singapore"
+keywords:
+  - NISAR
+  - InSAR
+  - L-band
+  - tropical peatland
+  - subsidence
+  - Central Kalimantan
+  - canal blocking
+  - NASA Space Apps Challenge
+abstract: >-
+  Open-source pipeline and interactive viewer that ingests NASA/ISRO NISAR L2
+  GUNW provisional interferograms over the Sebangau and former Mega Rice
+  Project peatlands in Central Kalimantan, exports 12-day coherence and 60-day
+  relative line-of-sight displacement layers, and fuses them with the Tay et
+  al. (2025) ALOS-2 subsidence benchmark, NASA FIRMS fire detections and
+  Landsat burn history to rank canal-blocking dam sites for village crews.
+references:
+  - type: article
+    title: "Satellite radar advances carbon emissions accountability over tropical peat"
+    authors:
+      - family-names: Tay
+        given-names: Cheryl
+    journal: "Communications Earth & Environment"
+    year: 2025
+  - type: article
+    title: "Monitoring degraded tropical peatland subsidence by integrating SBAS InSAR and machine learning"
+    authors:
+      - family-names: Umarhadi
+        given-names: Deha Agus
+      - family-names: Siegert
+        given-names: Florian
+    journal: "Environmental Research Communications"
+    year: 2026
+    doi: 10.1088/2515-7620/ae43ab
+  - type: article
+    title: "Subsidence and carbon loss in drained tropical peatlands"
+    authors:
+      - family-names: Hooijer
+        given-names: Aljosja
+    journal: Biogeosciences
+    year: 2012
+  - type: article
+    title: "Drainage canals in Southeast Asian peatlands increase carbon emissions"
+    authors:
+      - family-names: Dadap
+        given-names: Nathan C.
+    journal: "AGU Advances"
+    year: 2021
+  - type: report
+    title: "Landscape Assessment (LA), in FIREMON: Fire Effects Monitoring and Inventory System"
+    authors:
+      - family-names: Key
+        given-names: Carl H.
+      - family-names: Benson
+        given-names: Nathan C.
+    institution:
+      name: "USDA Forest Service, Rocky Mountain Research Station"
+    year: 2006
+    notes: "RMRS-GTR-164-CD"

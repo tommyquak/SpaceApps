@@ -1,0 +1,107 @@
+{
+  "method": "fine phase aggregated using unit_phasor; both signs tested after one constant circular reference offset; no scale or planar fit",
+  "aggregation": {
+    "mode": "unit_phasor",
+    "operator": "arg(area_mean(exp(i * fine_phase)))",
+    "strength_definition": "abs(area_mean(z)) / area_mean(abs(z))",
+    "coherence_operator": "area_mean(local_fine_coherence), not mission coherence reconstruction",
+    "mission_operator_equivalence": false,
+    "caveat": "Aggregation occurs after GSLC geocoding, not mission radar-coordinate multilooking followed by geocoding. Improved agreement would not establish operator equivalence or independently validated displacement.",
+    "cross_product_provenance": null,
+    "verified_ordered_mission_acquisition_dates": null
+  },
+  "inputs": {
+    "fine_phase": "docs/scientific_audit/operator_probe_20260910_d01/data/20260704_20260716/nisar_gslc_20260704_20260716_wrapped_phase_5m.tif",
+    "fine_coherence": "docs/scientific_audit/operator_probe_20260910_d01/data/20260704_20260716/nisar_gslc_20260704_20260716_coherence_5m.tif",
+    "mission_phase": "docs/scientific_audit/operator_probe_20260910_d01/data/20260704_20260716/mission_phase_20m.tif",
+    "mission_coherence": "docs/scientific_audit/operator_probe_20260910_d01/data/20260704_20260716/mission_coherence_20m.tif",
+    "fine_cross_product": null
+  },
+  "thresholds": {
+    "minimum_coherence": 0.25,
+    "minimum_circular_aggregation_strength": 0.25
+  },
+  "phase": {
+    "selected_convention": "same_sign",
+    "selected_fine_phase_multiplier": 1,
+    "candidates": {
+      "same_sign": {
+        "fine_phase_multiplier": 1,
+        "constant_circular_offset_rad": 0.621057180439171,
+        "valid_pixels": 7164,
+        "circular_mae_rad": 0.37454490151320213,
+        "circular_rmse_rad": 0.5186513574373431,
+        "circular_p95_abs_rad_sample": 1.0377977573620647,
+        "resultant_length": 0.8823869607587923,
+        "sample_pixels": 5000
+      },
+      "opposite_sign": {
+        "fine_phase_multiplier": -1,
+        "constant_circular_offset_rad": -1.983153342163028,
+        "valid_pixels": 7164,
+        "circular_mae_rad": 0.8107517575692401,
+        "circular_rmse_rad": 1.0591010588331664,
+        "circular_p95_abs_rad_sample": 2.418791036864039,
+        "resultant_length": 0.5924281662458492,
+        "sample_pixels": 5000
+      }
+    }
+  },
+  "coherence": {
+    "valid_pixels": 10000,
+    "fine_mean": 0.4603165737837553,
+    "mission_mean": 0.4720040173109621,
+    "bias_fine_minus_mission": -0.011687443527206779,
+    "mae": 0.05797774600870907,
+    "rmse": 0.07385918853894653,
+    "pearson": 0.9019698115119527,
+    "spearman_sample": 0.8951323213412926,
+    "spearman_sample_pixels": 5000,
+    "mean_circular_aggregation_strength": 0.4095238768013194,
+    "threshold_coverage": {
+      "0.25": {
+        "fine_fraction": 0.8887,
+        "mission_fraction": 0.9102,
+        "both_fraction": 0.8571
+      },
+      "0.35": {
+        "fine_fraction": 0.7234,
+        "mission_fraction": 0.7553,
+        "both_fraction": 0.676
+      },
+      "0.5": {
+        "fine_fraction": 0.3954,
+        "mission_fraction": 0.4243,
+        "both_fraction": 0.3416
+      },
+      "0.7": {
+        "fine_fraction": 0.0849,
+        "mission_fraction": 0.0918,
+        "both_fraction": 0.0676
+      }
+    }
+  },
+  "release_gates": {
+    "supporting_coherence": {
+      "passed": false,
+      "checks": {
+        "at_least_1000000_valid_pixels": false,
+        "absolute_bias_at_most_0.03": true,
+        "mae_at_most_0.10": true,
+        "pearson_at_least_0.85": true
+      },
+      "interpretation": "Passing permits a quality/observability layer only."
+    },
+    "displacement_phase": {
+      "passed": false,
+      "checks": {
+        "expected_same_sign_selected": true,
+        "at_least_1000000_valid_pixels": false,
+        "circular_mae_at_most_0.10_rad": false,
+        "circular_rmse_at_most_0.15_rad": false,
+        "resultant_length_at_least_0.98": false
+      },
+      "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+    }
+  }
+}

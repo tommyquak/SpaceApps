@@ -1,0 +1,11 @@
+# Applied to micromamba env "insar" on the NUS SoC cluster (backup: runSlcOffset.py.orig).
+# Adds an env-var override to force ISCE alos2App's built-in geometric-offset
+# coregistration path (normally auto-triggered only for all-water swaths).
+# Rationale: SLC amplitude matching fails deterministically over decorrelated
+# peat swamp for temporal baselines beyond ~3 months (Offoutliers culls to zero
+# and crashes); ALOS-2 precise orbits make geometric offsets sub-pixel [S].
+--- isce/components/isceobj/Alos2Proc/runSlcOffset.py.orig
++++ isce/components/isceobj/Alos2Proc/runSlcOffset.py
+@@ -83 +83 @@
+-                if (landRatio <= 0.00125):
++                if (landRatio <= 0.00125) or (os.environ.get("ALOS2_FORCE_GEOM_OFFSET", "") == "1"):

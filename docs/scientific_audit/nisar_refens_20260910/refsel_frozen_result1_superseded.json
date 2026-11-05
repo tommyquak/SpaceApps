@@ -1,0 +1,536 @@
+{
+ "schema_version": 1,
+ "stage": "evidence_only_no_phase_read",
+ "grid": {
+  "epsg": 4326,
+  "west": 112.35,
+  "south": -4.55,
+  "east": 115.1,
+  "north": -1.62,
+  "step_deg": 0.0018
+ },
+ "rules": {
+  "max_area_km2": 25.0,
+  "block_km": 4.995,
+  "peat_mean_cm_max": 0.0,
+  "peat_buffer_km": 1.0,
+  "dem_min_m": 30.0,
+  "prominence_min_m": 20.0,
+  "prominence_window_km": 5.0,
+  "worldcover_excluded": [
+   80,
+   90,
+   95
+  ],
+  "land_inside_coast_km": 1.0,
+  "min_area_km2": 4.0,
+  "min_separation_km": 15.0,
+  "max_candidates": 8,
+  "holdout_seed": 7,
+  "coherence_used": false,
+  "phase_used": false
+ },
+ "sources": {
+  "dem": "/home/t/tommy/pilot/dem/elevation_3s.dem.wgs84.vrt",
+  "peatgrids": "/home/t/tommy/full/peat/PEATGRIDS_THICKNESS_CM_MEAN.tif",
+  "worldcover_tiles": [
+   "ESA_WorldCover_10m_2021_v200_S03E111_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_S03E114_Map.tif"
+  ],
+  "land": "/home/t/tommy/full/peat/ne_10m_land/ne_10m_land.shp"
+ },
+ "n_qualifying_regions": 13,
+ "candidates": [
+  {
+   "label": 1,
+   "area_km2": 24.91583185786499,
+   "lon": 112.3815,
+   "lat": -1.8999,
+   "dem_median_m": 105.53787994384766,
+   "dem_min_m": 69.859130859375,
+   "prominence_m": 41.11128616333008,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 625
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 1,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-1.89990&lng=112.38150&format=json",
+    "units": [
+     {
+      "map_id": 3189990,
+      "source_id": 154,
+      "name": "Mesozoic volcanic and intrusive rocks",
+      "strat_name": "",
+      "lith": "mafic-intermediate volcanic rocks",
+      "descrip": "",
+      "b_int_name": "Mesozoic",
+      "t_int_name": "Mesozoic",
+      "b_age": 251.902,
+      "t_age": 66
+     }
+    ],
+    "pre_cenozoic_unit": true
+   }
+  },
+  {
+   "label": 35,
+   "area_km2": 24.91583185786499,
+   "lon": 115.0221,
+   "lat": -3.6873,
+   "dem_median_m": 840.85009765625,
+   "dem_min_m": 354.5578308105469,
+   "prominence_m": 720.4075927734375,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "0": 625
+   },
+   "worldcover_unavailable_fraction": 1.0,
+   "rank": 2,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-3.68730&lng=115.02210&format=json",
+    "units": [
+     {
+      "map_id": 3193215,
+      "source_id": 154,
+      "name": "Mesozoic sedimentary and volcanic rocks",
+      "strat_name": "Alino Formation",
+      "lith": "mafic-intermediate volcanic rocks",
+      "descrip": "",
+      "b_int_name": "Middle Triassic",
+      "t_int_name": "Early Cretaceous",
+      "b_age": 247.2,
+      "t_age": 100.5
+     }
+    ],
+    "pre_cenozoic_unit": true
+   }
+  },
+  {
+   "label": 7,
+   "area_km2": 23.91919858355039,
+   "lon": 114.6045,
+   "lat": -1.6505999999999998,
+   "dem_median_m": 102.4112319946289,
+   "dem_min_m": 84.74003601074219,
+   "prominence_m": 32.25967788696289,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 598,
+    "30": 2
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 3,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-1.65060&lng=114.60450&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  },
+  {
+   "label": 17,
+   "area_km2": 9.00956479980398,
+   "lon": 113.52189557522121,
+   "lat": -1.9845398230088498,
+   "dem_median_m": 68.26286315917969,
+   "dem_min_m": 63.207454681396484,
+   "prominence_m": 10.930007934570312,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 155,
+    "20": 61,
+    "30": 10
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 4,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-1.98454&lng=113.52190&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  },
+  {
+   "label": 15,
+   "area_km2": 16.145459043896512,
+   "lon": 115.07656666666666,
+   "lat": -2.0698333333333334,
+   "dem_median_m": 74.74714660644531,
+   "dem_min_m": 62.73765182495117,
+   "prominence_m": 15.519214630126953,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 401,
+    "30": 4
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 5,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-2.06983&lng=115.07657&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  },
+  {
+   "label": 5,
+   "area_km2": 24.91583185786499,
+   "lon": 114.0357,
+   "lat": -1.6515000000000004,
+   "dem_median_m": 112.61854553222656,
+   "dem_min_m": 102.62905883789062,
+   "prominence_m": 25.766860961914062,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 625
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 6,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-1.65150&lng=114.03570&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  },
+  {
+   "label": 8,
+   "area_km2": 24.91583185786499,
+   "lon": 115.06889999999997,
+   "lat": -1.6641,
+   "dem_median_m": 102.68896484375,
+   "dem_min_m": 83.13594055175781,
+   "prominence_m": 25.316505432128906,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 591,
+    "30": 34
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 7,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-1.66410&lng=115.06890&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  },
+  {
+   "label": 52,
+   "area_km2": 14.51098047402057,
+   "lon": 114.62905219780217,
+   "lat": -3.698095054945055,
+   "dem_median_m": 46.495025634765625,
+   "dem_min_m": 21.339536666870117,
+   "prominence_m": 46.495025634765625,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "0": 364
+   },
+   "worldcover_unavailable_fraction": 1.0,
+   "rank": 8,
+   "role": "holdout_control",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-3.69810&lng=114.62905&format=json",
+    "units": [
+     {
+      "map_id": 3193215,
+      "source_id": 154,
+      "name": "Mesozoic sedimentary and volcanic rocks",
+      "strat_name": "Alino Formation",
+      "lith": "mafic-intermediate volcanic rocks",
+      "descrip": "",
+      "b_int_name": "Middle Triassic",
+      "t_int_name": "Early Cretaceous",
+      "b_age": 247.2,
+      "t_age": 100.5
+     }
+    ],
+    "pre_cenozoic_unit": true
+   }
+  }
+ ],
+ "all_regions": [
+  {
+   "label": 1,
+   "area_km2": 24.91583185786499,
+   "lon": 112.3815,
+   "lat": -1.8999,
+   "dem_median_m": 105.53787994384766,
+   "dem_min_m": 69.859130859375,
+   "prominence_m": 41.11128616333008,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 625
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 1,
+   "role": "ensemble"
+  },
+  {
+   "label": 2,
+   "area_km2": 24.91583185786499,
+   "lon": 113.4093,
+   "lat": -1.6515000000000004,
+   "dem_median_m": 120.13421630859375,
+   "dem_min_m": 97.0056381225586,
+   "prominence_m": 36.755531311035156,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 624,
+    "30": 1
+   },
+   "worldcover_unavailable_fraction": 0.0
+  },
+  {
+   "label": 3,
+   "area_km2": 24.91583185786499,
+   "lon": 113.7315,
+   "lat": -1.6839,
+   "dem_median_m": 98.31385803222656,
+   "dem_min_m": 69.8406753540039,
+   "prominence_m": 41.39606475830078,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 625
+   },
+   "worldcover_unavailable_fraction": 0.0
+  },
+  {
+   "label": 5,
+   "area_km2": 24.91583185786499,
+   "lon": 114.0357,
+   "lat": -1.6515000000000004,
+   "dem_median_m": 112.61854553222656,
+   "dem_min_m": 102.62905883789062,
+   "prominence_m": 25.766860961914062,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 625
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 6,
+   "role": "ensemble"
+  },
+  {
+   "label": 8,
+   "area_km2": 24.91583185786499,
+   "lon": 115.06889999999997,
+   "lat": -1.6641,
+   "dem_median_m": 102.68896484375,
+   "dem_min_m": 83.13594055175781,
+   "prominence_m": 25.316505432128906,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 591,
+    "30": 34
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 7,
+   "role": "ensemble"
+  },
+  {
+   "label": 35,
+   "area_km2": 24.91583185786499,
+   "lon": 115.0221,
+   "lat": -3.6873,
+   "dem_median_m": 840.85009765625,
+   "dem_min_m": 354.5578308105469,
+   "prominence_m": 720.4075927734375,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "0": 625
+   },
+   "worldcover_unavailable_fraction": 1.0,
+   "rank": 2,
+   "role": "ensemble"
+  },
+  {
+   "label": 7,
+   "area_km2": 23.91919858355039,
+   "lon": 114.6045,
+   "lat": -1.6505999999999998,
+   "dem_median_m": 102.4112319946289,
+   "dem_min_m": 84.74003601074219,
+   "prominence_m": 32.25967788696289,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 598,
+    "30": 2
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 3,
+   "role": "ensemble"
+  },
+  {
+   "label": 4,
+   "area_km2": 18.178590923498295,
+   "lon": 113.88089605263157,
+   "lat": -1.649178947368421,
+   "dem_median_m": 85.89359283447266,
+   "dem_min_m": 66.80696868896484,
+   "prominence_m": 27.589365005493164,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 291,
+    "30": 18,
+    "60": 147
+   },
+   "worldcover_unavailable_fraction": 0.0
+  },
+  {
+   "label": 15,
+   "area_km2": 16.145459043896512,
+   "lon": 115.07656666666666,
+   "lat": -2.0698333333333334,
+   "dem_median_m": 74.74714660644531,
+   "dem_min_m": 62.73765182495117,
+   "prominence_m": 15.519214630126953,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 401,
+    "30": 4
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 5,
+   "role": "ensemble"
+  },
+  {
+   "label": 52,
+   "area_km2": 14.51098047402057,
+   "lon": 114.62905219780217,
+   "lat": -3.698095054945055,
+   "dem_median_m": 46.495025634765625,
+   "dem_min_m": 21.339536666870117,
+   "prominence_m": 46.495025634765625,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "0": 364
+   },
+   "worldcover_unavailable_fraction": 1.0,
+   "rank": 8,
+   "role": "holdout_control"
+  },
+  {
+   "label": 17,
+   "area_km2": 9.00956479980398,
+   "lon": 113.52189557522121,
+   "lat": -1.9845398230088498,
+   "dem_median_m": 68.26286315917969,
+   "dem_min_m": 63.207454681396484,
+   "prominence_m": 10.930007934570312,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 155,
+    "20": 61,
+    "30": 10
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "rank": 4,
+   "role": "ensemble"
+  },
+  {
+   "label": 13,
+   "area_km2": 5.1824930264359175,
+   "lon": 113.48406923076924,
+   "lat": -1.9225384615384615,
+   "dem_median_m": 74.57427978515625,
+   "dem_min_m": 65.90992736816406,
+   "prominence_m": 16.142507553100586,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 98,
+    "20": 22,
+    "30": 10
+   },
+   "worldcover_unavailable_fraction": 0.0
+  },
+  {
+   "label": 6,
+   "area_km2": 4.544647730874574,
+   "lon": 114.3729157894737,
+   "lat": -1.6399421052631582,
+   "dem_median_m": 98.85913848876953,
+   "dem_min_m": 85.2052993774414,
+   "prominence_m": 39.76731872558594,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 112,
+    "30": 2
+   },
+   "worldcover_unavailable_fraction": 0.0
+  }
+ ],
+ "geology": "attached (Macrostrat geologic_units/map, point queries at centroids)",
+ "candidates_sha256": "aaad8ea69e7727b2dee1be21d34565a426219e3eca83e810329fb497f9e87be1",
+ "frozen": true
+}

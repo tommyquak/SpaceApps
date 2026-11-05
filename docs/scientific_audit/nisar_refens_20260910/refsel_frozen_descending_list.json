@@ -1,0 +1,354 @@
+{
+ "schema_version": 1,
+ "stage": "evidence_only_no_phase_read",
+ "grid": {
+  "epsg": 4326,
+  "west": 112.35,
+  "south": -4.55,
+  "east": 115.1,
+  "north": -1.62,
+  "step_deg": 0.0018
+ },
+ "rules": {
+  "max_area_km2": 25.0,
+  "block_km": 4.995,
+  "peat_mean_cm_max": 0.0,
+  "peat_buffer_km": 1.0,
+  "dem_min_m": 30.0,
+  "prominence_min_m": 20.0,
+  "prominence_window_km": 5.0,
+  "worldcover_excluded": [
+   80,
+   90,
+   95
+  ],
+  "land_inside_coast_km": 1.0,
+  "footprint_both_tracks_eroded_km": 1.0,
+  "builtup_min_km2": 1.0,
+  "zahro_point": [
+   113.920443,
+   -2.213489
+  ],
+  "zahro_km": 3.0,
+  "nearest_first": true,
+  "footprint_tracks": "D",
+  "min_area_km2": 4.0,
+  "min_separation_km": 10.0,
+  "max_candidates": 12,
+  "holdout_seed": 7,
+  "coherence_used": false,
+  "phase_used": false
+ },
+ "sources": {
+  "dem": "/home/t/tommy/pilot/dem/elevation_3s.dem.wgs84.vrt",
+  "peatgrids": "/home/t/tommy/full/peat/PEATGRIDS_THICKNESS_CM_MEAN.tif",
+  "worldcover_tiles": [
+   "ESA_WorldCover_10m_2021_v200_S03E111_Map.tif",
+   "ESA_WorldCover_10m_2021_v200_S03E114_Map.tif"
+  ],
+  "land": "/home/t/tommy/full/peat/ne_10m_land/ne_10m_land.shp",
+  "footprints": {
+   "D": "NISAR_L2_PR_GUNW_024_061_D_090_025_4000_SH_20260630T104540_20260630T104611_20260712T104540_20260712T104610_P05023_N_F_J_001.h5"
+  }
+ },
+ "n_qualifying_regions": 5,
+ "candidates": [
+  {
+   "label": 4,
+   "area_km2": 15.946132389033593,
+   "lon": 113.90762099999998,
+   "lat": -2.2174605,
+   "dem_median_m": 58.419776916503906,
+   "dem_min_m": 50.759124755859375,
+   "prominence_m": 11.495620727539062,
+   "peat_mean_cm": 368.496337890625,
+   "worldcover_hist": {
+    "50": 400
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "dist_to_aoi_km": 90.45420284381129,
+   "class": "builtup",
+   "rank": 1,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-2.21746&lng=113.90762&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  },
+  {
+   "label": 1,
+   "area_km2": 24.91583185786499,
+   "lon": 113.3103,
+   "lat": -2.0169,
+   "dem_median_m": 80.48274993896484,
+   "dem_min_m": 68.57186126708984,
+   "prominence_m": 20.84261703491211,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 507,
+    "20": 8,
+    "30": 27,
+    "40": 1,
+    "60": 82
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "dist_to_aoi_km": 158.03360345200886,
+   "class": "relief",
+   "rank": 2,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-2.01690&lng=113.31030&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  },
+  {
+   "label": 5,
+   "area_km2": 22.882699978263208,
+   "lon": 112.67389965156792,
+   "lat": -2.2659554006968645,
+   "dem_median_m": 60.17283630371094,
+   "dem_min_m": 44.998817443847656,
+   "prominence_m": 16.380422592163086,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 528,
+    "20": 4,
+    "30": 29,
+    "60": 13
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "dist_to_aoi_km": 213.98163671844281,
+   "class": "relief",
+   "rank": 3,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-2.26596&lng=112.67390&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  },
+  {
+   "label": 8,
+   "area_km2": 24.91583185786499,
+   "lon": 112.5579,
+   "lat": -2.8899000000000004,
+   "dem_median_m": 60.2687873840332,
+   "dem_min_m": 52.000972747802734,
+   "prominence_m": 14.219966888427734,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 620,
+    "30": 4,
+    "50": 1
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "dist_to_aoi_km": 221.62390740795487,
+   "class": "relief",
+   "rank": 4,
+   "role": "ensemble",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-2.88990&lng=112.55790&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  },
+  {
+   "label": 13,
+   "area_km2": 8.411584835215221,
+   "lon": 112.52223270142179,
+   "lat": -3.0095104265402846,
+   "dem_median_m": 55.646053314208984,
+   "dem_min_m": 50.63334655761719,
+   "prominence_m": 10.197879791259766,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "0": 165,
+    "10": 43,
+    "30": 3
+   },
+   "worldcover_unavailable_fraction": 0.7819905213270142,
+   "dist_to_aoi_km": 227.05928293343118,
+   "class": "relief",
+   "rank": 5,
+   "role": "holdout_control",
+   "geology": {
+    "api": "https://macrostrat.org/api/v2/geologic_units/map?lat=-3.00951&lng=112.52223&format=json",
+    "units": [
+     {
+      "map_id": 3186059,
+      "source_id": 154,
+      "name": "Cenozoic sedimentary rocks",
+      "strat_name": "",
+      "lith": "carbonate-sandstone-conglomerate",
+      "descrip": "",
+      "b_int_name": "Cenozoic",
+      "t_int_name": "Cenozoic",
+      "b_age": 66,
+      "t_age": 0
+     }
+    ],
+    "pre_cenozoic_unit": false
+   }
+  }
+ ],
+ "all_regions": [
+  {
+   "label": 4,
+   "area_km2": 15.946132389033593,
+   "lon": 113.90762099999998,
+   "lat": -2.2174605,
+   "dem_median_m": 58.419776916503906,
+   "dem_min_m": 50.759124755859375,
+   "prominence_m": 11.495620727539062,
+   "peat_mean_cm": 368.496337890625,
+   "worldcover_hist": {
+    "50": 400
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "dist_to_aoi_km": 90.45420284381129,
+   "class": "builtup",
+   "rank": 1,
+   "role": "ensemble"
+  },
+  {
+   "label": 1,
+   "area_km2": 24.91583185786499,
+   "lon": 113.3103,
+   "lat": -2.0169,
+   "dem_median_m": 80.48274993896484,
+   "dem_min_m": 68.57186126708984,
+   "prominence_m": 20.84261703491211,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 507,
+    "20": 8,
+    "30": 27,
+    "40": 1,
+    "60": 82
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "dist_to_aoi_km": 158.03360345200886,
+   "class": "relief",
+   "rank": 2,
+   "role": "ensemble"
+  },
+  {
+   "label": 5,
+   "area_km2": 22.882699978263208,
+   "lon": 112.67389965156792,
+   "lat": -2.2659554006968645,
+   "dem_median_m": 60.17283630371094,
+   "dem_min_m": 44.998817443847656,
+   "prominence_m": 16.380422592163086,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 528,
+    "20": 4,
+    "30": 29,
+    "60": 13
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "dist_to_aoi_km": 213.98163671844281,
+   "class": "relief",
+   "rank": 3,
+   "role": "ensemble"
+  },
+  {
+   "label": 8,
+   "area_km2": 24.91583185786499,
+   "lon": 112.5579,
+   "lat": -2.8899000000000004,
+   "dem_median_m": 60.2687873840332,
+   "dem_min_m": 52.000972747802734,
+   "prominence_m": 14.219966888427734,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "10": 620,
+    "30": 4,
+    "50": 1
+   },
+   "worldcover_unavailable_fraction": 0.0,
+   "dist_to_aoi_km": 221.62390740795487,
+   "class": "relief",
+   "rank": 4,
+   "role": "ensemble"
+  },
+  {
+   "label": 13,
+   "area_km2": 8.411584835215221,
+   "lon": 112.52223270142179,
+   "lat": -3.0095104265402846,
+   "dem_median_m": 55.646053314208984,
+   "dem_min_m": 50.63334655761719,
+   "prominence_m": 10.197879791259766,
+   "peat_mean_cm": 0.0,
+   "worldcover_hist": {
+    "0": 165,
+    "10": 43,
+    "30": 3
+   },
+   "worldcover_unavailable_fraction": 0.7819905213270142,
+   "dist_to_aoi_km": 227.05928293343118,
+   "class": "relief",
+   "rank": 5,
+   "role": "holdout_control"
+  }
+ ],
+ "geology": "attached (Macrostrat geologic_units/map, point queries at centroids)",
+ "candidates_sha256": "fa6f9f924db1edf536041df90f8a97e9ba50ce0e58d5466bd8bb236e22fe2557",
+ "frozen": true
+}

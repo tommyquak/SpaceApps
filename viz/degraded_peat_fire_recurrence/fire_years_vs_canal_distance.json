@@ -1,0 +1,47 @@
+[
+ {
+  "band_km": "0 to 0.5",
+  "cells": 887734,
+  "area_km2": 3907.4,
+  "mean_fire_years": 2.51,
+  "frac_ge1": 0.795,
+  "frac_ge3": 0.437,
+  "frac_ge5": 0.181
+ },
+ {
+  "band_km": "0.5 to 1",
+  "cells": 96615,
+  "area_km2": 425.3,
+  "mean_fire_years": 2.46,
+  "frac_ge1": 0.74,
+  "frac_ge3": 0.44,
+  "frac_ge5": 0.19
+ },
+ {
+  "band_km": "1 to 2",
+  "cells": 39879,
+  "area_km2": 175.5,
+  "mean_fire_years": 2.65,
+  "frac_ge1": 0.865,
+  "frac_ge3": 0.458,
+  "frac_ge5": 0.18
+ },
+ {
+  "band_km": "2 to 3",
+  "cells": 11418,
+  "area_km2": 50.3,
+  "mean_fire_years": 1.07,
+  "frac_ge1": 0.541,
+  "frac_ge3": 0.124,
+  "frac_ge5": 0.034
+ },
+ {
+  "band_km": "3 to 5",
+  "cells": 2075,
+  "area_km2": 9.1,
+  "mean_fire_years": 0.36,
+  "frac_ge1": 0.23,
+  "frac_ge3": 0.058,
+  "frac_ge5": 0.0
+ }
+]

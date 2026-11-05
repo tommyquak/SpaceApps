@@ -1,0 +1,21 @@
+# Kapuas AOI override
+# Extends default.yaml for the Kapuas River pilot site
+
+aoi:
+  bbox: [114.304, -2.611, 114.404, -2.511]
+  epsg: 32750
+
+sentinel1:
+  subswath: IW2
+  min_temporal_gap_days: 14
+
+mintpy:
+  # A pinned reference pixel is stack-specific: any reference_yx must name
+  # the exact stack it was picked on (sensor, subswath, dimensions, date
+  # span). No Kapuas IW2 stack has such a pin, and the default.yaml IW3 pin
+  # is an arbitrary pixel on this grid, so it is cleared here.
+  reference_yx: []
+  # MintPy auto-selects the reference by coherence until a surveyed in-AOI
+  # stable point exists. The previous pin [-2.496900, 114.312148] was
+  # ~1.6 km north of the AOI bbox and is rejected by config validation.
+  reference_lalo: []

@@ -1,0 +1,142 @@
+{
+  "method": "fine phase aggregated using complex_weighted; both signs tested after one constant circular reference offset; no scale or planar fit",
+  "aggregation": {
+    "mode": "complex_weighted",
+    "operator": "arg(area_mean(reference_times_conjugate_secondary))",
+    "strength_definition": "abs(area_mean(z)) / area_mean(abs(z))",
+    "coherence_operator": "area_mean(local_fine_coherence), not mission coherence reconstruction",
+    "mission_operator_equivalence": false,
+    "caveat": "Aggregation occurs after GSLC geocoding, not mission radar-coordinate multilooking followed by geocoding. Improved agreement would not establish operator equivalence or independently validated displacement.",
+    "cross_product_provenance": {
+      "amplitude_source": "unscaled_reference_times_conjugate_secondary",
+      "center_frequency_hz": "1239000000.0",
+      "coherence_window_pixels": "5",
+      "complex_representation": "real_imaginary_bands",
+      "effective_support": "native_mode_dependent",
+      "frame_number": "176",
+      "frequency": "frequencyA",
+      "mission_input_data_exception_mask": "nonzero_values_excluded",
+      "mission_valid_data_mask": "subswath_ids_1_to_product_number_applied",
+      "mission_valid_data_mask_source": "NISAR_L2_GSLC_Product_Specification_Rev_E_section_4.4",
+      "operator_caveat": "geocoded_cross_product_not_radar_multilook_then_geocode",
+      "phase_convention": "reference_times_conjugate_secondary",
+      "pixel_posting_m": "5.0",
+      "pixel_spacing_x_crs_units": "5.0",
+      "pixel_spacing_y_crs_units": "5.0",
+      "polarization": "HH",
+      "processing_status": "wrapped_phase_not_displacement_or_velocity",
+      "reference_date": "2026-06-22T22:07:11.000000000",
+      "reference_granule": "NISAR_L2_PR_GSLC_023_125_A_176_4005_DHDH_A_20260622T220711_20260622T220745_P05023_N_F_J_001",
+      "reference_number_of_subswaths": "1",
+      "secondary_date": "2026-07-04T22:07:10.000000000",
+      "secondary_granule": "NISAR_L2_PR_GSLC_024_125_A_176_4005_DHDH_A_20260704T220710_20260704T220745_P05023_N_F_J_001",
+      "secondary_number_of_subswaths": "1",
+      "sensor": "NISAR L-SAR",
+      "source_product": "L2 GSLC",
+      "spatial_aggregation": "none_native_geocoded_gslc_grid",
+      "track_number": "125",
+      "units": "source_complex_amplitude_product",
+      "wavelength_m": "0.2419632429378531",
+      "wavelength_source": "source_product_centerFrequency",
+      "AREA_OR_POINT": "Area"
+    },
+    "verified_ordered_mission_acquisition_dates": [
+      "2026-06-22T22:07:11.000000000",
+      "2026-07-04T22:07:10.000000000"
+    ]
+  },
+  "inputs": {
+    "fine_phase": "docs/scientific_audit/operator_probe_20260910_d01/data/20260622_20260704/nisar_gslc_20260622_20260704_wrapped_phase_5m.tif",
+    "fine_coherence": "docs/scientific_audit/operator_probe_20260910_d01/data/20260622_20260704/nisar_gslc_20260622_20260704_coherence_5m.tif",
+    "mission_phase": "docs/scientific_audit/operator_probe_20260910_d01/data/20260622_20260704/mission_phase_20m.tif",
+    "mission_coherence": "docs/scientific_audit/operator_probe_20260910_d01/data/20260622_20260704/mission_coherence_20m.tif",
+    "fine_cross_product": "docs/scientific_audit/operator_probe_20260910_d01/data/20260622_20260704/nisar_gslc_20260622_20260704_complex_cross_product_5m.tif"
+  },
+  "thresholds": {
+    "minimum_coherence": 0.25,
+    "minimum_circular_aggregation_strength": 0.25
+  },
+  "phase": {
+    "selected_convention": "same_sign",
+    "selected_fine_phase_multiplier": 1,
+    "candidates": {
+      "same_sign": {
+        "fine_phase_multiplier": 1,
+        "constant_circular_offset_rad": -0.6783410202074528,
+        "valid_pixels": 7886,
+        "circular_mae_rad": 0.33828063463500047,
+        "circular_rmse_rad": 0.4933975145464468,
+        "circular_p95_abs_rad_sample": 0.9816145888514956,
+        "resultant_length": 0.8956476679093206,
+        "sample_pixels": 5000
+      },
+      "opposite_sign": {
+        "fine_phase_multiplier": -1,
+        "constant_circular_offset_rad": -0.28235773828687266,
+        "valid_pixels": 7886,
+        "circular_mae_rad": 0.7692066388900162,
+        "circular_rmse_rad": 1.0302880872750564,
+        "circular_p95_abs_rad_sample": 2.404571321684638,
+        "resultant_length": 0.6167850311833664,
+        "sample_pixels": 5000
+      }
+    }
+  },
+  "coherence": {
+    "valid_pixels": 10000,
+    "fine_mean": 0.44845577345490456,
+    "mission_mean": 0.454322345244512,
+    "bias_fine_minus_mission": -0.005866571789607406,
+    "mae": 0.05985170753337443,
+    "rmse": 0.07687149838793848,
+    "pearson": 0.8901941064214878,
+    "spearman_sample": 0.8912654500613989,
+    "spearman_sample_pixels": 5000,
+    "mean_circular_aggregation_strength": 0.5525759936667047,
+    "threshold_coverage": {
+      "0.25": {
+        "fine_fraction": 0.8689,
+        "mission_fraction": 0.8903,
+        "both_fraction": 0.8282
+      },
+      "0.35": {
+        "fine_fraction": 0.688,
+        "mission_fraction": 0.7153,
+        "both_fraction": 0.6341
+      },
+      "0.5": {
+        "fine_fraction": 0.3823,
+        "mission_fraction": 0.3857,
+        "both_fraction": 0.3217
+      },
+      "0.7": {
+        "fine_fraction": 0.0739,
+        "mission_fraction": 0.0745,
+        "both_fraction": 0.0529
+      }
+    }
+  },
+  "release_gates": {
+    "supporting_coherence": {
+      "passed": false,
+      "checks": {
+        "at_least_1000000_valid_pixels": false,
+        "absolute_bias_at_most_0.03": true,
+        "mae_at_most_0.10": true,
+        "pearson_at_least_0.85": true
+      },
+      "interpretation": "Passing permits a quality/observability layer only."
+    },
+    "displacement_phase": {
+      "passed": false,
+      "checks": {
+        "expected_same_sign_selected": true,
+        "at_least_1000000_valid_pixels": false,
+        "circular_mae_at_most_0.10_rad": false,
+        "circular_rmse_at_most_0.15_rad": false,
+        "resultant_length_at_least_0.98": false
+      },
+      "interpretation": "Passing is necessary but not sufficient for fine displacement; unwrapping, corrections, datum control, temporal redundancy, and independent validation remain required."
+    }
+  }
+}

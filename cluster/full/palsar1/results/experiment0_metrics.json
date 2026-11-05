@@ -1,0 +1,156 @@
+{
+ "grid": {
+  "width": 2671,
+  "height": 2050,
+  "px_m": 157.0
+ },
+ "labels": {
+  "tay_2018_2024": {
+   "n": 101979,
+   "label_std_mmyr": 12.410561855049306,
+   "clip": [
+    -31.221797103881837,
+    39.934168090820314
+   ],
+   "cv": {
+    "random5": {
+     "M1_xy": 0.545,
+     "M2_cov": 0.439,
+     "M3_cov_xy": 0.546,
+     "M0_mean": 0.0
+    },
+    "block5km": {
+     "M1_xy": 0.329,
+     "M2_cov": 0.164,
+     "M3_cov_xy": 0.348,
+     "M0_mean": 0.0
+    },
+    "block20km": {
+     "M1_xy": 0.116,
+     "M2_cov": -0.01,
+     "M3_cov_xy": 0.176,
+     "M0_mean": 0.0
+    }
+   },
+   "importance": {
+    "peat_depth_cm": 0.233,
+    "dist_to_peat_edge_m": 0.38,
+    "canal_density": 0.003,
+    "dist_to_canal_m": 0.358,
+    "fire_history": 0.026,
+    "dist_to_river_m": 0.0,
+    "dist_to_settle_m": 0.0,
+    "disturbance_year": 0.001
+   }
+  },
+  "palsar1_2007_2009": {
+   "n": 394397,
+   "label_std_mmyr": 12.691784038138273,
+   "clip": [
+    -36.25215744018555,
+    23.31469902038574
+   ],
+   "cv": {
+    "random5": {
+     "M1_xy": 0.954,
+     "M2_cov": 0.721,
+     "M3_cov_xy": 0.949,
+     "M0_mean": 0.0
+    },
+    "block5km": {
+     "M1_xy": 0.794,
+     "M2_cov": 0.297,
+     "M3_cov_xy": 0.789,
+     "M0_mean": 0.0
+    },
+    "block20km": {
+     "M1_xy": 0.44,
+     "M2_cov": -0.018,
+     "M3_cov_xy": 0.529,
+     "M0_mean": 0.0
+    },
+    "leave_one_path_out": {
+     "M1_xy": -0.071,
+     "M2_cov": -0.246,
+     "M3_cov_xy": 0.007,
+     "M0_mean": 0.0
+    }
+   },
+   "importance": {
+    "peat_depth_cm": 0.137,
+    "dist_to_peat_edge_m": 0.41,
+    "canal_density": 0.008,
+    "dist_to_canal_m": 0.413,
+    "fire_history": 0.032,
+    "dist_to_river_m": 0.0,
+    "dist_to_settle_m": 0.0,
+    "disturbance_year": 0.0
+   }
+  }
+ },
+ "palsar1_strata": {
+  "all_mean_mmyr": -7.71,
+  "all_ci95": [
+   -8.1,
+   -7.32
+  ],
+  "strata": [
+   {
+    "canal_tercile": 0,
+    "disturbed_by_2009": 0,
+    "burned": 0,
+    "n": 343832,
+    "mean_mmyr": -7.81,
+    "ci95": [
+     -8.22,
+     -7.37
+    ],
+    "distinct_from_all": false
+   },
+   {
+    "canal_tercile": 0,
+    "disturbed_by_2009": 0,
+    "burned": 1,
+    "n": 36253,
+    "mean_mmyr": -7.17,
+    "ci95": [
+     -8.26,
+     -6.17
+    ],
+    "distinct_from_all": false
+   },
+   {
+    "canal_tercile": 2,
+    "disturbed_by_2009": 0,
+    "burned": 0,
+    "n": 9002,
+    "mean_mmyr": -4.88,
+    "ci95": [
+     -6.49,
+     -3.28
+    ],
+    "distinct_from_all": true
+   },
+   {
+    "canal_tercile": 2,
+    "disturbed_by_2009": 0,
+    "burned": 1,
+    "n": 4928,
+    "mean_mmyr": -9.96,
+    "ci95": [
+     -11.48,
+     -8.78
+    ],
+    "distinct_from_all": true
+   }
+  ],
+  "n_distinct": 2
+ },
+ "acceptance": {
+  "palsar1_block5km_M2_ge_0.20": true,
+  "palsar1_block5km_M2_beats_xy_by_0.10": false,
+  "palsar1_leave_one_path_M2_ge_0.20": false,
+  "strata_ge_3_distinct": false
+ },
+ "verdict": "STRATUM_MEANS_ONLY"
+}

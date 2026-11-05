@@ -1,0 +1,1013 @@
+{
+  "schema_version": 1,
+  "observable": "provisional_filtered_local_contrast_mm",
+  "release_ready": false,
+  "annual_velocity_ready": false,
+  "inputs": {
+    "ascending": {
+      "path": "$DATA_ROOT/grid_products/external/nisar/20260905/nisar_A_disp60_hp10km_mm.tif",
+      "sha256": "8e707191402a4d24807abef8c4bafdb351582de89986c5fa98b568d9447d590d"
+    },
+    "descending": {
+      "path": "$DATA_ROOT/grid_products/external/nisar/20260905/nisar_D_disp60_hp10km_mm.tif",
+      "sha256": "9722a06ac0472b56b544865a16c03996f1fc5766eac417a64a77be7663b1eba8"
+    },
+    "sites": {
+      "path": "$DATA_ROOT/deliverables/tay_full_grid/dam_sites.geojson",
+      "sha256": "ae7440115a62d1ae0d5867b57a2d08698436e81a6d69ab04d76017ea9f4565eb"
+    }
+  },
+  "spatial_support": {
+    "crs": "EPSG:32749",
+    "window_width_m": 1200.0,
+    "window_height_m": 1200.0,
+    "resampling": "nearest"
+  },
+  "site_count": 60,
+  "paired_sites": 31,
+  "trials": [
+    {
+      "block_metres": 3000.0,
+      "groups": 16,
+      "group_sizes": [
+        1,
+        1,
+        5,
+        1,
+        2,
+        2,
+        1,
+        1,
+        1,
+        4,
+        1,
+        1,
+        6,
+        1,
+        2,
+        1
+      ],
+      "metrics": {
+        "n": 31,
+        "pearson_r": 0.7238311498191128,
+        "median_difference_mm": 2.2479705810546875,
+        "rmse_difference_mm": 7.553263677979273,
+        "same_sign_fraction_nonzero": 0.8709677419354839,
+        "nonzero_pairs": 31
+      },
+      "bootstrap_draws_requested": 2000,
+      "bootstrap_valid_correlation_draws": 2000,
+      "pearson_ci95": [
+        0.47017316059938496,
+        0.8595899187523156
+      ],
+      "median_difference_ci95_mm": [
+        -2.5839948654174805,
+        8.774881362915039
+      ],
+      "leave_one_group_out_r_range": [
+        0.6373781852263704,
+        0.7619434200971674
+      ],
+      "status": "descriptive_cross_geometry_evidence_only",
+      "release_ready": false
+    },
+    {
+      "block_metres": 5000.0,
+      "groups": 14,
+      "group_sizes": [
+        1,
+        1,
+        3,
+        3,
+        2,
+        2,
+        1,
+        2,
+        4,
+        1,
+        1,
+        4,
+        5,
+        1
+      ],
+      "metrics": {
+        "n": 31,
+        "pearson_r": 0.7238311498191128,
+        "median_difference_mm": 2.2479705810546875,
+        "rmse_difference_mm": 7.553263677979273,
+        "same_sign_fraction_nonzero": 0.8709677419354839,
+        "nonzero_pairs": 31
+      },
+      "bootstrap_draws_requested": 2000,
+      "bootstrap_valid_correlation_draws": 2000,
+      "pearson_ci95": [
+        0.45523844577087147,
+        0.868432224663069
+      ],
+      "median_difference_ci95_mm": [
+        -2.088629722595215,
+        9.22903060913086
+      ],
+      "leave_one_group_out_r_range": [
+        0.6373781852263704,
+        0.7741447889822345
+      ],
+      "status": "descriptive_cross_geometry_evidence_only",
+      "release_ready": false
+    },
+    {
+      "block_metres": 10000.0,
+      "groups": 11,
+      "group_sizes": [
+        1,
+        1,
+        3,
+        3,
+        4,
+        2,
+        1,
+        4,
+        1,
+        10,
+        1
+      ],
+      "metrics": {
+        "n": 31,
+        "pearson_r": 0.7238311498191128,
+        "median_difference_mm": 2.2479705810546875,
+        "rmse_difference_mm": 7.553263677979273,
+        "same_sign_fraction_nonzero": 0.8709677419354839,
+        "nonzero_pairs": 31
+      },
+      "bootstrap_draws_requested": 2000,
+      "bootstrap_valid_correlation_draws": 2000,
+      "pearson_ci95": [
+        0.4584071801674925,
+        0.8804875468837251
+      ],
+      "median_difference_ci95_mm": [
+        -2.6822385787963867,
+        10.031242370605469
+      ],
+      "leave_one_group_out_r_range": [
+        0.6343816604173994,
+        0.781064892834618
+      ],
+      "status": "descriptive_cross_geometry_evidence_only",
+      "release_ready": false
+    }
+  ],
+  "sites": [
+    {
+      "site": "D-01",
+      "lon": 114.68309869375906,
+      "lat": -2.683670460424211,
+      "xy_metres": [
+        909673.0869077606,
+        9702754.437847754
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 54,
+      "window_pixels": 225,
+      "paired_fraction": 0.24
+    },
+    {
+      "site": "D-02",
+      "lon": 114.71324383164006,
+      "lat": -2.6808199689601655,
+      "xy_metres": [
+        913031.7988773396,
+        9703060.012163782
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-03",
+      "lon": 114.68054910498306,
+      "lat": -2.6877211588204863,
+      "xy_metres": [
+        909387.750722389,
+        9702306.632212322
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 32,
+      "window_pixels": 225,
+      "paired_fraction": 0.14222222222222222
+    },
+    {
+      "site": "D-04",
+      "lon": 114.7223923560716,
+      "lat": -2.5698008277289186,
+      "xy_metres": [
+        914087.4903469251,
+        9715354.132812606
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 222,
+      "window_pixels": 225,
+      "paired_fraction": 0.9866666666666667,
+      "descending_mm": -3.681105613708496,
+      "ascending_mm": -1.5924758911132812
+    },
+    {
+      "site": "D-05",
+      "lon": 114.75928640541848,
+      "lat": -2.5601991722710813,
+      "xy_metres": [
+        918200.6816131063,
+        9716405.671137886
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 223,
+      "window_pixels": 225,
+      "paired_fraction": 0.9911111111111112,
+      "descending_mm": 18.465770721435547,
+      "ascending_mm": 9.236740112304688
+    },
+    {
+      "site": "D-06",
+      "lon": 114.6778495403967,
+      "lat": -2.702873771339886,
+      "xy_metres": [
+        909081.9906892785,
+        9700629.218319971
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-07",
+      "lon": 114.72509192065796,
+      "lat": -2.6766192446973616,
+      "xy_metres": [
+        914352.963103258,
+        9703521.301378697
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-08",
+      "lon": 114.68744799225931,
+      "lat": -2.67676927056389,
+      "xy_metres": [
+        910159.8354523418,
+        9703517.368626036
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 12,
+      "window_pixels": 225,
+      "paired_fraction": 0.05333333333333334
+    },
+    {
+      "site": "D-09",
+      "lon": 114.49082970488631,
+      "lat": -2.618709260217279,
+      "xy_metres": [
+        888279.9116947327,
+        9710010.988616776
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 193,
+      "window_pixels": 225,
+      "paired_fraction": 0.8577777777777778,
+      "descending_mm": -7.284779071807861,
+      "ascending_mm": -3.1880950927734375
+    },
+    {
+      "site": "D-10",
+      "lon": 114.78808176100628,
+      "lat": -2.514441282979824,
+      "xy_metres": [
+        921423.5394024064,
+        9721465.045429876
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 120,
+      "window_pixels": 225,
+      "paired_fraction": 0.5333333333333333,
+      "descending_mm": 22.21664810180664,
+      "ascending_mm": 11.218673706054688
+    },
+    {
+      "site": "D-11",
+      "lon": 114.67769956458635,
+      "lat": -2.698222969477496,
+      "xy_metres": [
+        909066.8461769691,
+        9701144.396992432
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 6,
+      "window_pixels": 225,
+      "paired_fraction": 0.02666666666666667
+    },
+    {
+      "site": "D-12",
+      "lon": 114.76168601838413,
+      "lat": -2.6689679255043974,
+      "xy_metres": [
+        918431.8732902831,
+        9704356.395728692
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-13",
+      "lon": 114.76573536526367,
+      "lat": -2.649464562855665,
+      "xy_metres": [
+        918889.5514073991,
+        9706515.443849387
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-14",
+      "lon": 114.34145379777455,
+      "lat": -2.60340662183135,
+      "xy_metres": [
+        871650.2244769055,
+        9711750.681584053
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 205,
+      "window_pixels": 225,
+      "paired_fraction": 0.9111111111111111,
+      "descending_mm": 16.59506607055664,
+      "ascending_mm": 6.21392822265625
+    },
+    {
+      "site": "D-15",
+      "lon": 114.67889937106918,
+      "lat": -2.694472322814278,
+      "xy_metres": [
+        909201.7400789821,
+        9701559.418930966
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 12,
+      "window_pixels": 225,
+      "paired_fraction": 0.05333333333333334
+    },
+    {
+      "site": "D-16",
+      "lon": 114.75913642960812,
+      "lat": -2.585403517847905,
+      "xy_metres": [
+        918175.7389691554,
+        9713613.803338569
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": 8.042424201965332,
+      "ascending_mm": 10.626419067382812
+    },
+    {
+      "site": "D-17",
+      "lon": 114.76003628447025,
+      "lat": -2.6713683393688568,
+      "xy_metres": [
+        918247.2862163882,
+        9704091.060908364
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-18",
+      "lon": 114.31025882922108,
+      "lat": -2.984772374547336,
+      "xy_metres": [
+        868057.6468439251,
+        9669535.880638441
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 224,
+      "window_pixels": 225,
+      "paired_fraction": 0.9955555555555555,
+      "descending_mm": -3.4537696838378906,
+      "ascending_mm": -0.5205354690551758
+    },
+    {
+      "site": "D-19",
+      "lon": 114.7486381228834,
+      "lat": -2.6380625969994824,
+      "xy_metres": [
+        916988.7901023377,
+        9707784.221135138
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-20",
+      "lon": 114.67934929850024,
+      "lat": -2.6896714950853595,
+      "xy_metres": [
+        909253.4603517167,
+        9702091.013455447
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 37,
+      "window_pixels": 225,
+      "paired_fraction": 0.16444444444444445
+    },
+    {
+      "site": "D-21",
+      "lon": 114.75088776003871,
+      "lat": -2.558848939472323,
+      "xy_metres": [
+        917265.4729542772,
+        9716557.979834745
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 223,
+      "window_pixels": 225,
+      "paired_fraction": 0.9911111111111112,
+      "descending_mm": 10.25242805480957,
+      "ascending_mm": -0.9464263916015625
+    },
+    {
+      "site": "D-22",
+      "lon": 114.69374697629415,
+      "lat": -2.6667175375064667,
+      "xy_metres": [
+        910864.8039405374,
+        9704628.616116088
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-23",
+      "lon": 114.52937348814707,
+      "lat": -2.4434790481117434,
+      "xy_metres": [
+        892625.3513494028,
+        9729404.449587435
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": 13.990263938903809,
+      "ascending_mm": 13.104171752929688
+    },
+    {
+      "site": "D-24",
+      "lon": 114.54227140783745,
+      "lat": -2.4437790998448006,
+      "xy_metres": [
+        894061.9261711114,
+        9729367.435796384
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 222,
+      "window_pixels": 225,
+      "paired_fraction": 0.9866666666666667,
+      "descending_mm": 1.6570587158203125,
+      "ascending_mm": 9.937553405761719
+    },
+    {
+      "site": "D-25",
+      "lon": 114.34400338655055,
+      "lat": -2.619609415416451,
+      "xy_metres": [
+        871929.3470305897,
+        9709955.933081256
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 224,
+      "window_pixels": 225,
+      "paired_fraction": 0.9955555555555555,
+      "descending_mm": 16.633075714111328,
+      "ascending_mm": 6.601833343505859
+    },
+    {
+      "site": "D-26",
+      "lon": 114.67455007256893,
+      "lat": -2.7015235385411276,
+      "xy_metres": [
+        908714.9431554852,
+        9700779.884580536
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 20,
+      "window_pixels": 225,
+      "paired_fraction": 0.08888888888888889
+    },
+    {
+      "site": "D-27",
+      "lon": 114.70229559748428,
+      "lat": -2.698823072943611,
+      "xy_metres": [
+        911806.2447950393,
+        9701069.609403385
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-28",
+      "lon": 114.76258587324625,
+      "lat": -2.5797025349198135,
+      "xy_metres": [
+        918561.8886831556,
+        9714244.17142064
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": -1.249265432357788,
+      "ascending_mm": 10.626419067382812
+    },
+    {
+      "site": "D-29",
+      "lon": 114.68444847605225,
+      "lat": -2.705574236937403,
+      "xy_metres": [
+        909816.0867117349,
+        9700327.87944344
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-30",
+      "lon": 114.3489525882922,
+      "lat": -2.619609415416451,
+      "xy_metres": [
+        872480.4397156783,
+        9709954.460236978
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 215,
+      "window_pixels": 225,
+      "paired_fraction": 0.9555555555555556,
+      "descending_mm": 19.146615982055664,
+      "ascending_mm": 5.588005065917969
+    },
+    {
+      "site": "D-31",
+      "lon": 114.70589501693274,
+      "lat": -2.6199094671495087,
+      "xy_metres": [
+        912233.437091148,
+        9709809.221605994
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-32",
+      "lon": 114.75583696178036,
+      "lat": -2.5801526125193996,
+      "xy_metres": [
+        917809.8904699311,
+        9714196.53947637
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": 13.1756591796875,
+      "ascending_mm": 14.728912353515625
+    },
+    {
+      "site": "D-33",
+      "lon": 114.7246419932269,
+      "lat": -2.657565959648215,
+      "xy_metres": [
+        914309.2388847043,
+        9705631.928441225
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-34",
+      "lon": 114.68924770198355,
+      "lat": -2.67451888256596,
+      "xy_metres": [
+        910361.0475107128,
+        9703766.023801237
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-35",
+      "lon": 114.68534833091437,
+      "lat": -2.68382048629074,
+      "xy_metres": [
+        909923.6114274727,
+        9702737.065200001
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 24,
+      "window_pixels": 225,
+      "paired_fraction": 0.10666666666666667
+    },
+    {
+      "site": "D-36",
+      "lon": 114.38659651669086,
+      "lat": -2.512040869115365,
+      "xy_metres": [
+        876703.7296017208,
+        9721853.837838346
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 185,
+      "window_pixels": 225,
+      "paired_fraction": 0.8222222222222222,
+      "descending_mm": 5.3031463623046875,
+      "ascending_mm": -0.5969314575195312
+    },
+    {
+      "site": "D-37",
+      "lon": 114.75463715529753,
+      "lat": -2.5675504397309883,
+      "xy_metres": [
+        917680.3427565952,
+        9715592.885632657
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 223,
+      "window_pixels": 225,
+      "paired_fraction": 0.9911111111111112,
+      "descending_mm": 11.626441955566406,
+      "ascending_mm": 9.275146484375
+    },
+    {
+      "site": "D-38",
+      "lon": 114.7534373488147,
+      "lat": -2.5695007759958615,
+      "xy_metres": [
+        917546.0447233026,
+        9715377.238762904
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 224,
+      "window_pixels": 225,
+      "paired_fraction": 0.9955555555555555,
+      "descending_mm": 14.0053129196167,
+      "ascending_mm": 11.808723449707031
+    },
+    {
+      "site": "D-39",
+      "lon": 114.7130938558297,
+      "lat": -2.6355121572684945,
+      "xy_metres": [
+        913030.1981335458,
+        9708078.605654487
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-40",
+      "lon": 114.70484518626027,
+      "lat": -2.6416632177961716,
+      "xy_metres": [
+        912109.3318232803,
+        9707400.025714772
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 1,
+      "window_pixels": 225,
+      "paired_fraction": 0.0044444444444444444
+    },
+    {
+      "site": "D-41",
+      "lon": 114.34070391872278,
+      "lat": -2.6148085876875324,
+      "xy_metres": [
+        871563.3703223248,
+        9710488.466161273
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": 16.120878219604492,
+      "ascending_mm": 8.676979064941406
+    },
+    {
+      "site": "D-42",
+      "lon": 114.5331228834059,
+      "lat": -2.443629073978272,
+      "xy_metres": [
+        893042.9400016716,
+        9729386.736450836
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 222,
+      "window_pixels": 225,
+      "paired_fraction": 0.9866666666666667,
+      "descending_mm": 9.826626777648926,
+      "ascending_mm": 12.508865356445312
+    },
+    {
+      "site": "D-43",
+      "lon": 114.74488872762457,
+      "lat": -2.5737015002586654,
+      "xy_metres": [
+        916592.3370557437,
+        9714914.724710781
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": 10.829143524169922,
+      "ascending_mm": 2.2030487060546875
+    },
+    {
+      "site": "D-44",
+      "lon": 114.71834300919207,
+      "lat": -2.672568546301086,
+      "xy_metres": [
+        913602.5636475978,
+        9703972.26544127
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-45",
+      "lon": 114.53042331881954,
+      "lat": -2.434777547853078,
+      "xy_metres": [
+        892744.8184555103,
+        9730367.771157105
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": 7.857285022735596,
+      "ascending_mm": 10.935531616210938
+    },
+    {
+      "site": "D-46",
+      "lon": 114.74263909046928,
+      "lat": -2.572351267459907,
+      "xy_metres": [
+        916342.1625784158,
+        9715065.025249528
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": 9.914752960205078,
+      "ascending_mm": 0.4714508056640625
+    },
+    {
+      "site": "D-47",
+      "lon": 114.34295355587808,
+      "lat": -2.6148085876875324,
+      "xy_metres": [
+        871813.8667661444,
+        9710487.798843827
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": 17.063753128051758,
+      "ascending_mm": 8.288871765136719
+    },
+    {
+      "site": "D-48",
+      "lon": 114.3441533623609,
+      "lat": -2.6220098292809104,
+      "xy_metres": [
+        871945.3366244165,
+        9709690.111334402
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 224,
+      "window_pixels": 225,
+      "paired_fraction": 0.9955555555555555,
+      "descending_mm": 16.43071937561035,
+      "ascending_mm": 5.969478607177734
+    },
+    {
+      "site": "D-49",
+      "lon": 114.69344702467343,
+      "lat": -2.685620796689084,
+      "xy_metres": [
+        910825.0823175579,
+        9702534.933586113
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-50",
+      "lon": 114.36320029027576,
+      "lat": -2.512941024314537,
+      "xy_metres": [
+        874098.0120605165,
+        9721760.903995547
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 138,
+      "window_pixels": 225,
+      "paired_fraction": 0.6133333333333333,
+      "descending_mm": -10.262182235717773,
+      "ascending_mm": -10.334300994873047
+    },
+    {
+      "site": "D-51",
+      "lon": 114.7226923076923,
+      "lat": -2.6751189860320745,
+      "xy_metres": [
+        914086.1747390556,
+        9703688.29257573
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-52",
+      "lon": 114.68699806482824,
+      "lat": -2.703023797206415,
+      "xy_metres": [
+        910100.9255571752,
+        9700609.50845481
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    },
+    {
+      "site": "D-53",
+      "lon": 114.36664973391387,
+      "lat": -2.512790998448008,
+      "xy_metres": [
+        874482.1891368262,
+        9721776.525133988
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 136,
+      "window_pixels": 225,
+      "paired_fraction": 0.6044444444444445,
+      "descending_mm": -11.445173263549805,
+      "ascending_mm": -12.745357513427734
+    },
+    {
+      "site": "D-54",
+      "lon": 114.67544992743106,
+      "lat": -2.6958225556130366,
+      "xy_metres": [
+        908817.0803490523,
+        9701411.02681719
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 19,
+      "window_pixels": 225,
+      "paired_fraction": 0.08444444444444445
+    },
+    {
+      "site": "D-55",
+      "lon": 114.38944605708757,
+      "lat": -2.510090532850491,
+      "xy_metres": [
+        877021.6260446894,
+        9722068.96817168
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 210,
+      "window_pixels": 225,
+      "paired_fraction": 0.9333333333333333,
+      "descending_mm": 10.05877685546875,
+      "ascending_mm": 7.8108062744140625
+    },
+    {
+      "site": "D-56",
+      "lon": 114.52367440735365,
+      "lat": -2.4395783755819966,
+      "xy_metres": [
+        891991.6865177057,
+        9729838.086038282
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 220,
+      "window_pixels": 225,
+      "paired_fraction": 0.9777777777777777,
+      "descending_mm": 14.394166946411133,
+      "ascending_mm": 18.585716247558594
+    },
+    {
+      "site": "D-57",
+      "lon": 114.31550798258345,
+      "lat": -2.8398473874806003,
+      "xy_metres": [
+        868689.1663313033,
+        9685579.99931827
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 224,
+      "window_pixels": 225,
+      "paired_fraction": 0.9955555555555555,
+      "descending_mm": -4.342714309692383,
+      "ascending_mm": 0.4659852981567383
+    },
+    {
+      "site": "D-58",
+      "lon": 114.42274068698596,
+      "lat": -2.497788411795137,
+      "xy_metres": [
+        880733.0821480107,
+        9723421.519972235
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 225,
+      "window_pixels": 225,
+      "paired_fraction": 1.0,
+      "descending_mm": -6.959123611450195,
+      "ascending_mm": -21.532516479492188
+    },
+    {
+      "site": "D-59",
+      "lon": 114.49667876149007,
+      "lat": -2.602956544231764,
+      "xy_metres": [
+        888936.1594658556,
+        9711753.612124419
+      ],
+      "status": "paired_diagnostic",
+      "paired_pixels": 221,
+      "window_pixels": 225,
+      "paired_fraction": 0.9822222222222222,
+      "descending_mm": -1.9380178451538086,
+      "ascending_mm": -10.215423583984375
+    },
+    {
+      "site": "D-60",
+      "lon": 114.74053942912433,
+      "lat": -2.6391127780651837,
+      "xy_metres": [
+        916086.2760040453,
+        9707670.611415954
+      ],
+      "status": "insufficient_common_support",
+      "paired_pixels": 0,
+      "window_pixels": 225,
+      "paired_fraction": 0.0
+    }
+  ],
+  "limitations": [
+    "Source rasters lack verified acquisition lists, correction lineage, and per-pair component linkage.",
+    "Filtered contrasts remove long spatial wavelengths and cannot recover frame-wide displacement.",
+    "Cross-geometry agreement is consistency evidence; LOS geometry and time windows may differ.",
+    "Sites were not reserved before filter selection; this is retrospective, not held-out validation.",
+    "Spatial groups reduce pseudoreplication but do not establish independence; inspect block-size sensitivity.",
+    "Requires a subsequent acquisition and independent withheld stable controls before operational use."
+  ]
+}

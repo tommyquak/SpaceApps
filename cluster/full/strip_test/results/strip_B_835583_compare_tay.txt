@@ -1,0 +1,64 @@
+# Strip test, variant B (Tay order). Cluster jobs 835439 (prep), 835440 (unwrap array), 835583 (stack + MintPy + compare_tay).
+# Log excerpts copied verbatim from ~/full/logs on 2026-09-10. compare_tay is the cluster copy in use at the time
+# (pre-provenance version, SKIP_RUN_GUARD=1); the statistic is the same block-bootstrap Pearson r.
+# prep:
+window {'r0': 0, 'r1': 498, 'c0': 361, 'c1': 770, 'length': 498, 'width': 409, 'strip_px': 158214}
+geometry written: incidence 39.8..45.0, lat -3.042..-2.368, lon 113.701..114.575
+# unwrap array 835440, per block: ok=206 207 207 206 206 206 206 206, failed=0 in every block (1650 crops)
+# geocode array 835442 (for A'), per block: same counts, failed=0 (1650 crops)
+# variant B log (835583):
+in-component fraction over interior px: p50 0.45 p90 0.65 p99 0.73 max 0.76
+reference y,x = 181,116 in-component 0.76 proxy coh 0.837 (top 0.1 percent threshold 0.76, 203 candidates)
+STACKB_OK 1650 pairs
+################################################
+Time used: 10 mins 44.6 secs
+
+=== compare_tay: variant B (radar-coordinate inversion, no deramp) ===
+our velocity : velocity.h5  [UNCORRECTED (no closure-bias correction applied)]
+NOTE: same-sensor benchmark (both ALOS-2), NOT independent validation.
+
+Tay nonzero cells on our grid : 472056 (55.56%)
+our grid area                 : 18,243 km2
+comparable after both masks   : 49610 px (5.84%)
+
+ALL comparable pixels  n=49610
+   ours  median  -37.73  mean  -37.75  std  28.45 mm/yr
+   Tay   median   +2.39  mean   +2.93  std  10.94 mm/yr
+   Pearson r        +0.0628
+   bias (ours-Tay)  -40.67 mm/yr   [NOT interpretable: different reference datums]
+   RMSE raw           50.44 mm/yr   [likewise datum-contaminated]
+   RMSE demeaned      29.83 mm/yr   <- the defensible number
+   block-bootstrap r +0.0602  [-0.0794, 0.1982] 95%
+
+temporalCoherence > 0.3  n=47457
+   ours  median  -38.57  mean  -38.38  std  27.66 mm/yr
+   Tay   median   +2.31  mean   +2.75  std  10.67 mm/yr
+   Pearson r        +0.0599
+   bias (ours-Tay)  -41.12 mm/yr   [NOT interpretable: different reference datums]
+   RMSE raw           50.35 mm/yr   [likewise datum-contaminated]
+   RMSE demeaned      29.05 mm/yr   <- the defensible number
+   block-bootstrap r +0.0630  [-0.0928, 0.2083] 95%
+
+temporalCoherence > 0.5  n=27846
+   ours  median  -31.64  mean  -34.96  std  28.04 mm/yr
+   Tay   median   +1.51  mean   +1.85  std   9.54 mm/yr
+   Pearson r        +0.0320
+   bias (ours-Tay)  -36.82 mm/yr   [NOT interpretable: different reference datums]
+   RMSE raw           47.07 mm/yr   [likewise datum-contaminated]
+   RMSE demeaned      29.33 mm/yr   <- the defensible number
+   block-bootstrap r +0.0437  [-0.1286, 0.2175] 95%
+
+temporalCoherence > 0.7  n=1815
+   ours  median   -3.59  mean   -7.79  std  16.20 mm/yr
+   Tay   median   +1.89  mean   +2.08  std   5.07 mm/yr
+   Pearson r        -0.4090
+   bias (ours-Tay)  -9.86 mm/yr   [NOT interpretable: different reference datums]
+   RMSE raw           21.28 mm/yr   [likewise datum-contaminated]
+   RMSE demeaned      18.85 mm/yr   <- the defensible number
+   block-bootstrap r -0.3132  [-0.5445, 0.2728] 95%
+
+Reference datums differ (Tay: CPKY GNSS, stable <1 mm/yr; ours: unverified
+high-ground pixel). Absolute bias/RMSE are therefore not interpretable;
+correlation and demeaned residuals are the defensible measures.
+COMPARE_B_EXIT=0
+STRIP_B_DONE

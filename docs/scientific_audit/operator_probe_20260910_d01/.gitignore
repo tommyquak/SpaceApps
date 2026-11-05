@@ -1,0 +1,2 @@
+# Regenerated raster crops remain local; retain the script and small reports.
+data/**/*.tif

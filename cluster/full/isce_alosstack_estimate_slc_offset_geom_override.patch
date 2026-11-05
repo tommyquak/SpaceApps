@@ -1,0 +1,13 @@
+# Applied to micromamba env "insar" on the NUS SoC cluster
+# (backup: share/isce2/alosStack/estimate_slc_offset.py.orig).
+# Same override as isce_runSlcOffset_geom_override.patch, applied to the
+# alosStack per-date offset estimator: the built-in geometric-offset branch
+# (normally all-water-swaths only) also triggers on ALOS2_FORCE_GEOM_OFFSET=1.
+# Rationale: amplitude matching against the stack reference fails
+# deterministically over swamp beyond ~3 months of separation (measured);
+# ALOS-2 precise orbits make geometric offsets sub-pixel [S].
+--- share/isce2/alosStack/estimate_slc_offset.py.orig
++++ share/isce2/alosStack/estimate_slc_offset.py
+@@ -169 +169 @@
+-                if (landRatio <= 0.00125):
++                if (landRatio <= 0.00125) or (os.environ.get("ALOS2_FORCE_GEOM_OFFSET", "") == "1"):

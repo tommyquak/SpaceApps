@@ -1,0 +1,287 @@
+{
+ "source": "stack_smoke.sbatch job on the NUS SoC cluster, 2026-09-02 (cmd1.out); reference 181123, secondary 181012, frame 3700, swaths 2-4, -nrlks1 1 -nalks1 14",
+ "reference_date": "181123",
+ "secondary_date": "181012",
+ "frame": "3700",
+ "reference_swath": "2",
+ "rangePixelSize": 8.582533435738496,
+ "azimuthLineInterval": {
+  "2": 0.0003017035388618294,
+  "3": 0.0004155295009324482,
+  "4": 0.00044041707496999654
+ },
+ "azimuthLineInterval_note": "taken from the 181012 frame.xml; the 181123 values are not persisted. The printed reference stretch terms (-0.27393, -0.314959) agree with these ratios to six digits",
+ "swath_offset_matching": {
+  "range": [
+   0.0,
+   -4100.224,
+   -5312.159
+  ],
+  "azimuth": [
+   0.0,
+   20.272,
+   17.607
+  ]
+ },
+ "raw_s2_startingRange": 734356.0,
+ "printed_startingRangeMinimum": 734356.0,
+ "printed_sensingStartMinimum": "2018-11-23T04:02:56.934512",
+ "nalks1": 14,
+ "nrlks1": 1,
+ "reference_raw_dims": {
+  "2": [
+   172356,
+   4440
+  ],
+  "3": [
+   125142,
+   5670
+  ],
+  "4": [
+   118070,
+   5794
+  ]
+ },
+ "reference_raw_dims_note": "181123 raw swath [lines, samples] from the resamp_slc INPUT_LINES/INPUT_WIDTH prints of the 181123 self-resample blocks in cmd1.out (lines 8680-8683, 9745-9748, 10809-10812); the 181012 raw s3 is 5680 x 125142",
+ "resampled_dims_printed": {
+  "2": [
+   172356,
+   4440
+  ],
+  "3": [
+   172355,
+   5670
+  ],
+  "4": [
+   172355,
+   5794
+  ]
+ },
+ "resampled_dims_note": "resamp_slc Output Image Dimensions, identical for every date (cmd1.out lines 5231-5232, 6505-6506, 7638-7639): resample_common_grid.py lines 250-251 size the resampled grid from the reference date's raw swath, round(N_lines * ali_s / ali_2) and round(N_samples * rps / rps)",
+ "reference_polys_printed": {
+  "2": {
+   "rg": [
+    [
+     0.0,
+     0.0
+    ]
+   ],
+   "az": [
+    [
+     4.12325
+    ],
+    [
+     0.0
+    ]
+   ]
+  },
+  "3": {
+   "rg": [
+    [
+     -0.224,
+     0.0
+    ]
+   ],
+   "az": [
+    [
+     -2.61835
+    ],
+    [
+     -0.27393
+    ]
+   ]
+  },
+  "4": {
+   "rg": [
+    [
+     -0.383,
+     0.0
+    ]
+   ],
+   "az": [
+    [
+     0.0
+    ],
+    [
+     -0.314959
+    ]
+   ]
+  }
+ },
+ "applied_polys_printed": {
+  "2": {
+   "rg": [
+    [
+     7.86436,
+     0.000163228,
+     3.71961e-09
+    ],
+    [
+     6.6539e-06,
+     1.60629e-10,
+     0.0
+    ],
+    [
+     -5.23044e-11,
+     0.0,
+     0.0
+    ]
+   ],
+   "az": [
+    [
+     -5.52541,
+     2.18877e-05,
+     -1.30211e-08
+    ],
+    [
+     -4.10872e-06,
+     -3.08561e-09,
+     0.0
+    ],
+    [
+     1.42637e-10,
+     0.0,
+     0.0
+    ]
+   ],
+   "note": "printPoly2d rows = azimuth power, cols = range power, 6 significant digits; meanAzimuth = min y1 of the cull points"
+  },
+  "3": {
+   "rg": [
+    [
+     8.36996,
+     0.000144665,
+     -2.19472e-09
+    ],
+    [
+     4.39311e-06,
+     2.81996e-11,
+     0.0
+    ],
+    [
+     -6.7832e-12,
+     0.0,
+     0.0
+    ]
+   ],
+   "az": [
+    [
+     -134.946,
+     -0.00011591,
+     8.67454e-09
+    ],
+    [
+     -0.273936,
+     -1.56769e-11,
+     0.0
+    ],
+    [
+     3.5949e-11,
+     0.0,
+     0.0
+    ]
+   ],
+   "note": "printPoly2d rows = azimuth power, cols = range power, 6 significant digits; meanAzimuth = min y1 of the cull points"
+  },
+  "4": {
+   "rg": [
+    [
+     8.81383,
+     4.09549e-05,
+     1.59124e-08
+    ],
+    [
+     2.3016e-05,
+     -2.2045e-09,
+     0.0
+    ],
+    [
+     -1.84583e-10,
+     0.0,
+     0.0
+    ]
+   ],
+   "az": [
+    [
+     -158.318,
+     -0.000253049,
+     3.9767e-08
+    ],
+    [
+     -0.314963,
+     -1.38043e-09,
+     0.0
+    ],
+    [
+     1.51669e-10,
+     0.0,
+     0.0
+    ]
+   ],
+   "note": "printPoly2d rows = azimuth power, cols = range power, 6 significant digits; meanAzimuth = min y1 of the cull points"
+  }
+ },
+ "offsetpoly_full_precision": {
+  "2": {
+   "rg": {
+    "fit_sigma": 0.10883642023228396,
+    "const": 7.864359983741671,
+    "rg": 0.00016322751750919105,
+    "az": 6.653897789362214e-06,
+    "cross": 1.606287602627427e-10,
+    "rg2": 3.7196055177375924e-09,
+    "az2": -5.230435237328215e-11
+   },
+   "az": {
+    "fit_sigma": 0.32865024368276574,
+    "const": -5.52541328772547,
+    "rg": 2.1887691448205064e-05,
+    "az": -4.10871603493395e-06,
+    "cross": -3.085611313496478e-09,
+    "rg2": -1.3021147512944278e-08,
+    "az2": 1.4263719610918334e-10
+   }
+  },
+  "3": {
+   "rg": {
+    "fit_sigma": 0.07054487118405958,
+    "const": 8.369962296110621,
+    "rg": 0.00014466496590973422,
+    "az": 4.393112179367097e-06,
+    "cross": 2.8199612567732078e-11,
+    "rg2": -2.1947206259150667e-09,
+    "az2": -6.7831954049581765e-12
+   },
+   "az": {
+    "fit_sigma": 0.16007741784143428,
+    "const": -134.94608225517797,
+    "rg": -0.00011590955629083716,
+    "az": -0.2739357239682228,
+    "cross": -1.5676878681996726e-11,
+    "rg2": 8.674544067394603e-09,
+    "az2": 3.594903032950997e-11
+   }
+  },
+  "4": {
+   "rg": {
+    "fit_sigma": 0.21687397022176408,
+    "const": 8.81382674130586,
+    "rg": 4.095486715421405e-05,
+    "az": 2.301602092731408e-05,
+    "cross": -2.204498811526581e-09,
+    "rg2": 1.5912391666456196e-08,
+    "az2": -1.8458298962959615e-10
+   },
+   "az": {
+    "fit_sigma": 0.3677143792655647,
+    "const": -158.31779706247056,
+    "rg": -0.00025304877682023885,
+    "az": -0.31496324277972954,
+    "cross": -1.3804323602906077e-09,
+    "rg2": 3.976695753102731e-08,
+    "az2": 1.516690897218829e-10
+   }
+  }
+ },
+ "offsetpoly_full_precision_note": "offsetpoly.f90 prints all six fitted terms at full precision (Constant, Range Slope, Azimuth Slope, Range/Azimuth cross, Range quadratic, Azimuth quadratic); cmd1.out blocks at lines 5409-5420 and 5422-5433 (s2), 6808-6819 and 6821-6832 (s3), 8014-8025 and 8027-8038 (s4). rg2 is the printPoly2d [0][2] term, az2 the [2][0] term."
+}

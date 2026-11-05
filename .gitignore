@@ -1,0 +1,58 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# Local assistant session state
+.claude/
+.codex/
+
+# Credentials: never commit. Earthdata, CDS, Planet and Telegram
+# credentials are read from the environment or ~/.netrc / ~/.cdsapirc.
+.env
+.env.*
+*.env
+.netrc
+.cdsapirc
+.edl_token
+*.pem
+*.key
+*.pub
+
+# Pipeline outputs and large data (sample rasters under data/sample are tracked)
+output/
+scratch/
+catalog.db
+*.log
+data/*
+!data/sample/
+data/sample/*
+!data/sample/*.tif
+!data/sample/DATA.md
+grid_products/
+deliverables/
+*.h5
+*.SAFE
+*.zip
+
+# Rendered frames and videos from viz/ (kept outside the repository)
+viz/**/frames*/
+viz/**/layers_transparent/
+viz/**/fires_viirs/
+*.mp4
+*.gif
